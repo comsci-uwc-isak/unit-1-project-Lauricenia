@@ -15,7 +15,9 @@ Contents
 Planning
 ----------
  ###### Defining the context (100-150 words)-Topic 1.1.1 
-</details>
+ <details><summary>CLICK ME</summary>
+  Summary will be here 
+<p></details>
 
 Design
 ---------
