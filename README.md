@@ -13,9 +13,8 @@ Contents
   1. [Evalution](#evaluation)
 
 Planning
-----------
- ###### Defining the context (100-150 words)-Topic 1.1.1 
- <details><summary>###### Defining the context (100-150 words)-Topic 1.1.1</summary>
+---------- 
+ <details><summary>Defining the context (100-150 words)-Topic 1.1.1</summary>
   Summary will be here 
 <p></details>
 
