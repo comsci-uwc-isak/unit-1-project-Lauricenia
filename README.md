@@ -14,7 +14,7 @@ Contents
 
 Planning
 ----------
-
+**Defining the context (100 - 1005) words** 
 Design
 ---------
 
