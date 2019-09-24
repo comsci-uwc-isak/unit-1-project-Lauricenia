@@ -20,6 +20,10 @@ Planning
 
 Design
 ---------
+ <details><summary>Defining the context (100-150 words)-Topic 1.1.1</summary>
+  
+  
+<p></details> 
 
 Development
 --------
