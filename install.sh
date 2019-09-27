@@ -13,8 +13,8 @@ Read path
 cd $path
 
 echo "$PWD"
-	if [ $path != $PWD ]; then 
-		echo "Error creating the folder structure  
+	if [ $path!=$PWD ]; then 
+		echo "Error creating the folder structure"  
 	fi
 
 #Creating the App folder 
