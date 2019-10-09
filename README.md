@@ -73,13 +73,14 @@ Development
 1. Check if the car exists. If yes continue, if not "message", exit.
 1. Read the record trips in the car license and for the first word in line (km)
 do summary for all if $1 arg =all
-
+<p></details>
 
 <p></details>
 
 Evaluation
 -----------
-Test 1:
+
+<details><summary>Test 1</summary>
 First time running the program we had one issue: the test file needed to move to the main folder
 ```.sh
 cd ../
@@ -87,8 +88,9 @@ cd ../
 This is ncessary because the create.sh resideds in the main folder whereas the test file is inside the /tests folders.
 
 The second run of the the test file was unsesccfull too because the database folder was not existent. Also the created pogram did not store the license file nside the database 
+<p></details>
 
-Test 2:
+<details><summary>Test 2</summary>
 ckeck that the car was added to the mainfile
 In the shell cript we used this lin:
 ```.sh
@@ -100,4 +102,5 @@ We had an error because of the quotation mark
 quotation marks makes the argument a phrase. Without the quotation mark the words will be read separetly not as a phrase and it might give tHE ERROR OF "too many arguments"
 
 summary : explain what type of testing was used (refer to the slides in )
+<p></details>
 
