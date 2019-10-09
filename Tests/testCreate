@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#This file test the first sucess criterion, namely, 
+#A car can be created and stored in the database
+
+#step 1: create a acr using the script create
+cd ../
+bash create TXM301 nissan red 9
+
+#step 2: check that the license file .txt was created 
+if [ -f "Database/TXM301.txt" ] ; then
+echo "Test one: a txt file was created inside the database: passed"
+else 
+echo "Test one : Error. Filr not found: not passed"
+fi
+
+#step 3: check that the car was added to the main file
+lastline=$( tail -n 1 Databse/maincarfile.txt )
+if [ "TXM301 nissan red 9" == "$lastline" ]; then 
+	echo "Test 2 : File was entered correctlry"
+else
+	echo "Test 2 : Failed"
+fi
+
+#step 4: Check if the car was deleted
+if [ !-f "Database/TXM301.txt" ] ; then
+echo "Test 3: a txt file was deleted inside the database: passed 
+else 
+echo "Test 3: Error. File not deleted: not passed."
+
+#step 5:Check if the car was deleted
+lastline=$( tail -n 1 Databse/maincarfile.txt )
+if [ "TXM301 nissan red 9" !== "$lastline" ]; then
+        echo "Test 2 : File was deleted  correctlry"
+else
+        echo "Test 2 : Failed"
+fi
+ 

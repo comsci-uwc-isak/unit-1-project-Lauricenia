@@ -24,7 +24,7 @@ for ((i=o;i<45;i++))
 do 
 	echo -n " "
 done
-echo -n "Welcome"
+echo -n "$*"
 for ((i=0; i<46; i++))
 do 
 	echo -n " "

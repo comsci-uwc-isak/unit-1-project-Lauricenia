@@ -1,0 +1,39 @@
+disk=$4
+
+if [ -f /media/$disk ]; then 
+
+#Mounting the USB driver
+mkdir /media/$usb-drivename
+
+mount /dev/sdc1 /media/$usb-drivename/
+
+#moving to the usb-driver
+cd /media/$usb-drivename
+
+#Duplicating files in backup
+if [ ! -f Rental]; then
+mkdir RentalCarappbackup 
+fi
+
+cd rentalcarAppBackup
+
+if [ ! -f Maincarfile.tx ]; then 
+mkdir Maincarfile
+fi
+
+#Replication of the creation of the car
+plate=$1
+model=$2
+color=$3
+pp=$4
+
+
+echo "$plate $model $color $pp" >> maincarfile.txt
+ech " " > $plate.txt 
+
+bash frame.sh "Backup  was successful" 
+
+#unmounting the USB-drive
+unmount /media/$usb-drivename
+
+
