@@ -45,11 +45,9 @@ Design
 <p></details> 
 
 Development
--------
-<details><summary>Development of the function</summary>
+----------
   
- 
-<details><summary>Creating a new car function</summary>
+ <details><summary>Creating a new car function</summary>
  The following steps summarize the algorithms to create a new car in the system:
   
 1. Get input from the user 
@@ -73,8 +71,6 @@ Development
 1. Check if the car exists. If yes continue, if not "message", exit.
 1. Read the record trips in the car license and for the first word in line (km)
 do summary for all if $1 arg =all
-<p></details>
-
 <p></details>
 
 Evaluation
