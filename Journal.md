@@ -1,6 +1,6 @@
 Reflection (1st day) - September 24th 
 -------------------------------------
-## What did we do today: 
+#### What did we do today: 
 Practise planning through exercises
 ## What did you learn:
 How to do write a planning and how to make a connection between the topics and planning process 
