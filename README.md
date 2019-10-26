@@ -15,7 +15,7 @@ Contents
 Planning
 ---------- 
  <details><summary>Definition of the problem</summary>
-My client is an onwer of a car rental bussiness. His company has a range of cars availbale for rent on a price that varies on the hours of use of the car. The owner requests a computer program for recording information about their orders with the purpose of collecting basic information about the distance driven for each car and points specific features: easy commands to allow to create a car, record a trip distance, query the trip history a car, edit, delete a car and see the total statistics. One more requirement of the client was a simple terminal based program with a simple and transparent installation. Theres no reference to prior experience with a computer system program. 
+My client is an onwer of a car rental bussiness. His company has a range of cars availbale for rent on a price that varies on the hours of use of the car. The owner requests a computer program for recording information about their orders with the purpose of collecting basic information about the distance driven for each car and points out specific features: easy commands to allow to create a car, record a trip distance, query the trip history a car, edit, delete a car and see the total statistics. One more requirement of the client was a simple terminal based program with a simple and transparent installation. Theres no reference to prior experience with a computer system program. 
  <p></details>
 
  <details><summary>Proposed Solution</summary>
@@ -51,7 +51,7 @@ Development
  The following steps summarize the algorithms to create a new car in the system:
   
 1. Get input from the user 
-1. Check number of arguments (model, color, pp). If 4 then continue, if not exit "message". 
+1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit. 
 1. Write to main file with one extra line. Not erasing other entries. 
 1. Create car trip file with 4 case for the 4 arguments plate.txt
   <p></details>
@@ -59,9 +59,9 @@ Development
 <details><summary>recording the trip information</summary>
  The following steps summarize the algorithms to record trip info:
   
-1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not exit "message".
+1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
 1. Check that the car exists.
-1. if car exists then write the trip info in the $plate.txt file, without erasing previous trips 
+1. If car exists then write the trip info in the $plate.txt file, without erasing previous trips.
 <p></details>
 
 <details><summary>Summary</summary>
@@ -77,24 +77,26 @@ Evaluation
 -----------
 
 <details><summary>Test 1</summary>
-First time running the program we had one issue: the test file needed to move to the main folder
-```.sh
+1. First time running the program we had one issue: the test file needed to move to the main folder
+```
+  .sh
 cd ../
 ```
-This is ncessary because the create.sh resideds in the main folder whereas the test file is inside the /tests folders.
+This is necessary because the create.sh resids in the main folder whereas the test file is inside the /tests folders.
 
-The second run of the the test file was unsesccfull too because the database folder was not existent. Also the created pogram did not store the license file nside the database 
+1. The second run of the the test file was also unsucessfull because the database folder was not existent. Also the created program did not store the license file inside the database 
 <p></details>
 
 <details><summary>Test 2</summary>
-ckeck that the car was added to the mainfile
-In the shell cript we used this lin:
-```.sh
+1. First we check if the car was added to the mainfile
+In the shell script we used this line:
+```
+.sh
 lastline= $( tail -n 1 Databse/maincarfile.txt )
 ```
 The tail -n command is used to read the lines from the last one and the number (1) is the number of the lines that have to be read. Everything together is doing **read 1 line starting from the last one**
-Then we compare the file we created for the test with the lastline in the maincarfile
-We had an error because of the quotation mark 
+1. Then we compare the file we created for the test with the lastline in the maincarfile
+1. We had an error because of not putting the quotation mark 
 quotation marks makes the argument a phrase. Without the quotation mark the words will be read separetly not as a phrase and it might give tHE ERROR OF "too many arguments"
 
 summary : explain what type of testing was used (refer to the slides in )
