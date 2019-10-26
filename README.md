@@ -78,10 +78,12 @@ Evaluation
 
 <details><summary>Test 1</summary>
 1. First time running the program we had one issue: the test file needed to move to the main folder
+  
 ```
   .sh
 cd ../
 ```
+
 This is necessary because the create.sh resids in the main folder whereas the test file is inside the /tests folders.
 
 1. The second run of the the test file was also unsucessfull because the database folder was not existent. Also the created program did not store the license file inside the database 
@@ -90,6 +92,7 @@ This is necessary because the create.sh resids in the main folder whereas the te
 <details><summary>Test 2</summary>
 1. First we check if the car was added to the mainfile
 In the shell script we used this line:
+  
 ```
 .sh
 lastline= $( tail -n 1 Databse/maincarfile.txt )
