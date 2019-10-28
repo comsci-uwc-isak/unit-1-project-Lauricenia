@@ -84,3 +84,29 @@ Reflection (7th day) - October 9th
 #### What did you learn: 
 1. How to read lines and how to read words (km) in lines and get the total distance travelled by the car (sum of all kmm) 
 1. How it is important to move to the right directory to run a specific command
+
+
+Reflection (8th day) - October 28th
+---------------------------------------
+#### What did we do:
+1. We started with a warm up exercise, similar to the random alphabet homework
+1. Create a man documentation
+#### What did you learn:
+1. command ``` man "command" ``` : used to provide the documentation on a command
+https://www.cyberciti.biz/faq/linux-unix-creating-a-manpage/
+``` .TH ``` header 
+``` .SH ``` script name
+
+2. to copy in the man directory
+```/usr/share/man/man6/create.6
+
+#### Questions:
+
+
+
+
+Summary Reflection on the Car Rental App Problem
+-------------------------------------------------
+Q1. What skills have you developed so far?
+Q2. What have worked for you in the classroom of CS?
+Q3. What are some things/activities/strategies that you would change in the CS classroom to achieve your best in the nest 6 weeks?
