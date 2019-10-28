@@ -98,11 +98,7 @@ https://www.cyberciti.biz/faq/linux-unix-creating-a-manpage/
 ``` .SH ``` script name
 
 2. to copy in the man directory
-```/usr/share/man/man6/create.6
-
-#### Questions:
-
-
+```/usr/share/man/man6/create.6 ```
 
 
 Summary Reflection on the Car Rental App Problem
