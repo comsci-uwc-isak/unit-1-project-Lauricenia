@@ -161,6 +161,50 @@ fi
 cd ../script
 bash frame1.sh "Trip info recorded succesfully"
 ```
+[This scripts shows the algorithms to edit a car info]
+<p>/details>
+  
+  
+<details><summary>Summary</summary>
+  The following steps summarize the algorithms to delete a car:
+
+```
+#!/bin/bash
+
+#This program deletes a created car
+
+plate=$1
+
+#First we check the number of arguments
+if [ $# -ne 1 ]; then
+echo " No input. Please restart and enter the name of the car. "
+exit
+fi
+
+#move to the Car Rental App main folder
+cd ..
+
+#Check if car exists
+if [ ! -f db/$plate.txt ]; then
+echo " This car does not exist."
+exit
+
+else
+
+#delete car
+rm db/$plate.txt
+
+
+#delete line of the car in the maintext.file
+sed -i '' "/$plate/d" db/maincarfile.txt
+
+#showing the results
+bash script/frame1.sh "Car deleted successfully"
+
+fi
+```
+[The above script shows the algorithms to delete a car]
+<p></details>
 
 
 <details><summary>Summary</summary>
@@ -170,11 +214,79 @@ bash frame1.sh "Trip info recorded succesfully"
 1. Check if the car exists. If yes continue, if not "message", exit.
 1. Read the record trips in the car license and for the first word in line (km)
 do summary for all if $1 arg =all
+
+```
+#!/bin/bash
+
+
+#This script generates the summary of the car
+
+bash frame1.sh Summary
+
+#Check if the user inputs any argument (check number of arguments)
+if [ $# -ne 1 ]; then
+echo "No argument inputed.Run the program again and enter the car license"
+exit
+fi
+
+
+#Check if file exists in database
+FILE=$1
+#Another option is moving to the database before checking the file
+if [ ! -f "../db/$FILE.txt" ]; then
+ echo " Car not created. $FILE does not exist in the database "
+ exit
+fi
+
+#Summary of the car
+total=0
+
+while read line;
+do
+
+#Show the sum of the km
+for km in $line
+do
+  (( total=$total+$km ))
+break
+done
+
+done < ../db/$FILE.txt
+
+#Step 4: Show result nicely
+cd ../script/
+bash frame1.sh "Total distance travelled for $FILE was $total"
+exit
+```
 <p></details>
 
-Evaluation
------------
+<details><summary>backup</summary>
+The following steps summarize the algorithms to backup the data in the Car Rental App:
 
+```
+#!/bin/bash
+
+#this program backs up the Rental Car app data into a directory chosen by the
+#user
+
+destination=$1
+
+if [ $# -ne 1 ]; then
+echo "Sorry, not argument was inputed"
+exit
+
+else
+
+cp -a ~/Desktop/RentalCarApp/db $destination
+echo "Successfully backed up into $destination."
+fi
+```
+[The above script shows the algorithms to backup the Car Rental App data]
+<p></details>
+
+
+Evaluation
+----------------------
 <details><summary>Test 1</summary>
 1. First time running the program we had one issue: the test file needed to move to the main folder
   
