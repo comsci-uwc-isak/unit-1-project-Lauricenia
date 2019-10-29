@@ -165,7 +165,7 @@ bash frame1.sh "Trip info recorded succesfully"
 <p></details>
   
   
-<details><summary>Summary</summary>
+<details><summary>Delete</summary>
   The following steps summarize the algorithms to delete a car:
 
 ```
