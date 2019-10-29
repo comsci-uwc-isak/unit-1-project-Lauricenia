@@ -162,7 +162,7 @@ cd ../script
 bash frame1.sh "Trip info recorded succesfully"
 ```
 [This scripts shows the algorithms to edit a car info]
-<p>/details>
+<p></details>
   
   
 <details><summary>Summary</summary>
