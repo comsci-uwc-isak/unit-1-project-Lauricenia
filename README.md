@@ -85,8 +85,8 @@ echo " " > db/$plate.txt
 bash script/frame1.sh "Car Created successfully"
 ```
 [This script shows the algorithms for creating the car]
+<p></details>
 
-  <p></details>
 
 <details><summary>recording the trip information</summary>
  The following steps summarize the algorithms to record trip info:
@@ -287,6 +287,7 @@ fi
 
 Evaluation
 ----------------------
+
 <details><summary>Test 1</summary>
 1. First time running the program we had one issue: the test file needed to move to the main folder
   
