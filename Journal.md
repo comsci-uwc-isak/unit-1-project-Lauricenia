@@ -97,8 +97,16 @@ https://www.cyberciti.biz/faq/linux-unix-creating-a-manpage/
 ``` .TH ``` header 
 ``` .SH ``` script name
 
-2. to copy in the man directory
+1. to copy in the man directory
 ```/usr/share/man/man6/create.6 ```
+
+
+Reflection (9th day) - October 29th
+----------------------------------------
+#### What did we do:
+1. Warm up activity: a program to show the digits of a number
+1. Revision of homework Count words problem. I shpuld have used counter "counter
+#### What did I learn:
 
 
 Summary Reflection on the Car Rental App Problem
