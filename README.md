@@ -54,6 +54,38 @@ Development
 1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit. 
 1. Write to main file with one extra line. Not erasing other entries. 
 1. Create car trip file with 4 case for the 4 arguments plate.txt
+
+```
+#!/bin/bash
+
+#This program creates a car and record the orders of a car rental bussiness
+
+#Create a car
+#Check number of arguments
+if [ $# -ne 4 ]; then
+echo " Incomplete input. Please enter Plate, Model, Colour and PP "
+exit
+fi
+
+#If number of arguments is correct. Continue
+plate=$1
+model=$2
+color=$3
+pp=$4
+
+#Record order
+#moving to the directory where we can find the db file inside the RentalCarApp
+#folder. Now we are inside the scripts file, so we will move one level up.
+cd ..
+#Adding new entry to the file maincarfile.txt without erasing.
+echo "$plate $model $color $pp" >> db/maincarfile.txt
+#creating
+echo " " > db/$plate.txt
+
+bash script/frame1.sh "Car Created successfully"
+```
+[This script shows the algorithms for creating the car]
+
   <p></details>
 
 <details><summary>recording the trip information</summary>
@@ -62,7 +94,74 @@ Development
 1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
 1. Check that the car exists.
 1. If car exists then write the trip info in the $plate.txt file, without erasing previous trips.
+
+```
+#!/bin/bash
+
+plate=$1
+km=$2
+dateout=$3
+datein=$4
+
+#Check if arguments are complete
+if [ $# -ne 4 ]; then
+echo " The arguments are not complete. Enter Plate, Km, Date-out and Date-in "
+exit
+fi
+
+plate=$1
+km=$2
+dateout=$3
+datein=$4
+
+cd ../db
+if [ ! -f $plate.txt ]; then
+echo "This car was not created"
+exit
+else
+echo "$km $dateout $datein" >> $plate.txt
+fi
+
+cd ../script
+bash frame1.sh "Trip info recorded succesfully"
+```
+[This script shows the algorith for recording a car trip]
 <p></details>
+
+<details><summary>Editing a recorded data</summary>
+   The following steps summarize the algorithms to edit a car info:
+
+```
+ #!/bin/bash
+
+plate=$1
+km=$2
+dateout=$3
+datein=$4
+
+#Check if arguments are complete
+if [ $# -ne 4 ]; then
+echo " The arguments are not complete. Enter Plate, Km, Date-out and Date-in "
+exit
+fi
+
+plate=$1
+km=$2
+dateout=$3
+datein=$4
+
+cd ../db
+if [ ! -f $plate.txt ]; then
+echo "This car was not created"
+exit
+else
+echo "$km $dateout $datein" >> $plate.txt
+fi
+
+cd ../script
+bash frame1.sh "Trip info recorded succesfully"
+```
+
 
 <details><summary>Summary</summary>
   The following steps summarize the algorithms to generate the summary of a car:
