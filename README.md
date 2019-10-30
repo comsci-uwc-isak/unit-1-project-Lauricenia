@@ -19,8 +19,13 @@ My client is an onwer of a car rental bussiness. His company has a range of cars
  <p></details>
 
  <details><summary>Proposed Solution</summary>
-Since we dont know about any prior experience of the stakeholders with a computer system, we have to follow all the requirements given by the client entirely and successfully because we assume they must be according the stakeholders capacities and the technology present in the company. To make the installation easy and clear, its necessary to use a sotware system that already has a terminal to reduce the work of going through its instalation, which would make the process of installing the app less simple and longer.
- <p></details>
+Since we dont know about any prior experience of the stakeholders with a computer system, we have to follow all the requirements given by the client entirely and successfully because we assume they must be according the stakeholders capacities and the technology present in the company. To make the installation easy and clear, its necessary to use a sotware system that already has a terminal to reduce the work of going through its instalation, which would make the process of installing the app less simple and longer. The chosen terminal was bash... 
+Git Hub was used to record all the steps in the process of creating the Car Rental App. This helps in the organization to keep on track on what is done and what needs to be done. 
+  https://techterms.com/definition/bash
+  
+  unique featurew
+  https://devdocs.io/bash/html_node/bash-features#Bash-Features
+  <p></details>
  
  <details><summary>Sucess Criteria</summary>
   These are the measurable outcomes :
@@ -55,7 +60,7 @@ summarize
 <p></details> 
 
 <details><summary>Test plan</summary>
- testing procedure
+ testing plan
   program---expected outcome
 <p></details> 
 
