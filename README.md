@@ -42,12 +42,29 @@ Design
   ![SystemDiagram]() 
   [Fig1][This picture shows the system diagram for the car rental program]
   
+ The System diagram is ...
+ To design the system diagram of the car rental app we followed the requirements of the client for the desirable outcomes. 
+ The input of data will be made through a bash terminal using the scripts that we will be uploaded together with the Cra Rental App through installation. The data will be directed to the database file tha is also within the Car Rental App folder.
+ Our scripts comprehend 8 actions that will be afterwards explained in the development section: create, record, edit,delete, summary, backup and uninstall.
+<p></details> 
+
+<details><summary>Algorithms flow diagram</summary>
+create 
+record
+summarize
+<p></details> 
+
+<details><summary>Test plan</summary>
+ testing procedure
+  program---expected outcome
 <p></details> 
 
 Development
 ----------
   
- <details><summary>Creating a new car function</summary>
+<details><summary>Creating a new car function</summary>
+  
+The create script has the function of 
  The following steps summarize the algorithms to create a new car in the system:
   
 1. Get input from the user 
@@ -55,7 +72,7 @@ Development
 1. Write to main file with one extra line. Not erasing other entries. 
 1. Create car trip file with 4 case for the 4 arguments plate.txt
 
-```
+```.sh
 #!/bin/bash
 
 #This program creates a car and record the orders of a car rental bussiness
@@ -130,14 +147,15 @@ bash frame1.sh "Trip info recorded succesfully"
 
 <details><summary>Editing a recorded data</summary>
    The following steps summarize the algorithms to edit a car info:
-
+1. Check the number of arguments. If not equal to 4, then print "message" and exit
+1. atribute variables to the arguments
+1. move to the database file to locate the car file
+1. check if car file exists. If not, then print "message" and exit. Else, copy the arguments to the car file.
+1. move to the script file to locate the frame script
+1. show results in frame script
+  
 ```
  #!/bin/bash
-
-plate=$1
-km=$2
-dateout=$3
-datein=$4
 
 #Check if arguments are complete
 if [ $# -ne 4 ]; then
@@ -167,13 +185,16 @@ bash frame1.sh "Trip info recorded succesfully"
   
 <details><summary>Delete</summary>
   The following steps summarize the algorithms to delete a car:
-
+1. Check the existance and number of arguments. If not equal to one, then print "message" and exit. If yes, continue.
+1. atribute a variable to the first argument
+1. move to the database directory to locate the car file
+1. check if car exists. If not, then print "message" and exit. Else, delete the car file and delete the car info in the main car file 
+1. Show results in frame
+  
 ```
 #!/bin/bash
 
 #This program deletes a created car
-
-plate=$1
 
 #First we check the number of arguments
 if [ $# -ne 1 ]; then
@@ -181,11 +202,13 @@ echo " No input. Please restart and enter the name of the car. "
 exit
 fi
 
+plate=$1
+
 #move to the Car Rental App main folder
-cd ..
+cd ../db
 
 #Check if car exists
-if [ ! -f db/$plate.txt ]; then
+if [ ! -f $plate.txt ]; then
 echo " This car does not exist."
 exit
 
@@ -262,7 +285,11 @@ exit
 
 <details><summary>backup</summary>
 The following steps summarize the algorithms to backup the data in the Car Rental App:
-
+1. Check the existance and number of arguments. If not equal to 1 then print "message", exit, else :
+   1. cope the Car Rental App into a destination input by the user
+   2. change the name to one that specifies the day of the backup
+   3. show the results  
+  
 ```
 #!/bin/bash
 
@@ -272,21 +299,27 @@ The following steps summarize the algorithms to backup the data in the Car Renta
 destination=$1
 
 if [ $# -ne 1 ]; then
-echo "Sorry, not argument was inputed"
+echo "Sorry, no destination was inputed. Try again"
 exit
 
 else
 
+date=date+%D
 cp -a ~/Desktop/RentalCarApp/db $destination
+mv $destination/db $destination/db-$date
 echo "Successfully backed up into $destination."
 fi
 ```
 [The above script shows the algorithms to backup the Car Rental App data]
 <p></details>
 
+man pages 
 
+documentations of problems/evolutions fared
 Evaluation
 ----------------------
+
+how this tests files show that the programs are working, type of tests
 
 <details><summary>Test 1</summary>
 1. First time running the program we had one issue: the test file needed to move to the main folder
@@ -315,5 +348,9 @@ The tail -n command is used to read the lines from the last one and the number (
 quotation marks makes the argument a phrase. Without the quotation mark the words will be read separetly not as a phrase and it might give tHE ERROR OF "too many arguments"
 
 summary : explain what type of testing was used (refer to the slides in )
+
+compare the criteria with the result, evidence for the succes criteria 
+recommendations for the future 
+move the test files to development 
 <p></details>
 
