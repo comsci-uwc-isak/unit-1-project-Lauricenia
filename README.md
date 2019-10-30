@@ -314,8 +314,8 @@ fi
 <p></details>
 
 man pages 
-
 documentations of problems/evolutions fared
+
 Evaluation
 ----------------------
 
