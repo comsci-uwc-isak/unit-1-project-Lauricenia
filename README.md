@@ -63,12 +63,12 @@ Create function flowchart
 
 Record function flowchart
 -----------
-![Diagram](recordcar.jpn)
+![Diagram](recordcar.png)
 [fig3][This picture shows the flowchart of the record function]
 
 Edit function flowchart
 -----------
-![Diagram](editcar.jpn)
+![Diagram](editcar.png)
 [fig4][This picture shows the flowchart of the edit function]
 
 
