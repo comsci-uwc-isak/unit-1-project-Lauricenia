@@ -7,7 +7,12 @@ A car rental management minimal app in Bash.
 
 Contents
 -----------------------
-
+ 1. [Planning](#planning)
+  1. [Design](#design)
+  1. [Development](#development)
+  1. [Evalution](#evaluation)
+  1. [Citations](#citations)
+  
  <details><summary>Planning</summary>
 
 Definition of the problem
@@ -578,12 +583,15 @@ This function deletes the app's main folder as well as all the components within
 
 #Go two levels up to get to the directory where our Car Rental File was 
 #installed
-cd ../..
+cd ~/Desktop
 
 #delete the app directory
 rm -r RentalCarApp
-
 ``
+[Fig][The above script shows the algorithms for the uninstall function]
+The following steps summarize the algorithms to backup the data in the Car Rental App:
+1. Go to the Desktop
+1. delete the CarRentalApp
 
 Man pages
 ================
