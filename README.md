@@ -42,7 +42,7 @@ Design
 ---------
  <details><summary>System Diagram</summary>
   
-  ![SystemDiagram](System diagram.png)
+  ![Diagram](System diagram.png)
   
   [Fig1][This picture shows the system diagram for the car rental program]
   
