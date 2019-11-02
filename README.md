@@ -12,20 +12,21 @@ Contents
   1. [Development](#development)
   1. [Evalution](#evaluation)
 
-Planning
----------- 
- <details><summary>Definition of the problem</summary>
-My client is an onwer of a car rental bussiness. His company has a range of cars availbale for rent on a price that varies on the hours of use of the car. The owner requests a computer program for recording information about their orders with the purpose of collecting basic information about the distance driven for each car and points out specific features: easy commands to allow to create a car, record a trip distance, query the trip history a car, edit, delete a car and see the total statistics. One more requirement of the client was a simple terminal based program with a simple and transparent installation. Theres no reference to prior experience with a computer system program. 
- <p></details>
+ <details><summary>Planning</summary>
 
- <details><summary>Proposed Solution</summary>
+Definition of the problem
+=========================
+My client is an onwer of a car rental bussiness. His company has a range of cars availbale for rent on a price that varies on the hours of use of the car. The owner requests a computer program for recording information about their orders with the purpose of collecting basic information about the distance driven for each car and points out specific features: easy commands to allow to create a car, record a trip distance, query the trip history a car, edit, delete a car and see the total statistics. One more requirement of the client was a simple terminal based program with a simple and transparent installation. Theres no reference to prior experience with a computer system program. 
+
+Proposed Solution
+=====================
 Since we dont know about any prior experience of the stakeholders with a computer system, we have to follow all the requirements given by the client entirely and successfully because we assume they must be according the stakeholders capacities and the technology present in the company. To make the installation easy and clear, its necessary to use a sotware system that already has the chosen terminal to reduce the work of going through its instalation, which would make the process of installing the app less simple and longer. I chose to work on bash because I am familiar with it, its a free software that can be found in most operating systems except for window bases. These include a lot of linux distributions, macs ls, ios, android among otherrs. It can generate txt files and has the man page feature. 
 Git Hub was used to record all the steps in the process of creating the Car Rental App. This helps in the organization to keep on track on what is done and what needs to be done. 
   https://techterms.com/definition/bash
   https://devdocs.io/bash/html_node/bash-features#Bash-Features
-  <p></details>
- 
- <details><summary>Sucess Criteria</summary>
+
+Sucess Criteria
+===================
   These are the measurable outcomes :
 
 1. A car can be created and stored in the database
@@ -38,38 +39,54 @@ Git Hub was used to record all the steps in the process of creating the Car Rent
 1. The application can be uninstalled 
  <p></details>
  
-Design
----------
- <details><summary>System Diagram</summary>
+
+ <details><summary>Design</summary>
   
-  ![Diagram](System diagram.png)
-  
-  [Fig1][This picture shows the system diagram for the car rental program]
-  
- 
+System diagram
+=======================
  To design the system diagram of the car rental app we followed the requirements of the client for the desirable outcomes. 
- The input of data will be made through a bash terminal using the scripts that we will be uploaded together with the Cra Rental App through installation. The data will be directed to the database file tha is also within the Car Rental App folder.
+ The input of data will be made through a bash terminal using the scripts that we will be uploaded together with the Car Rental App through installation. The data will be directed to the database file tha is also within the Car Rental App folder.
  Our scripts comprehend 8 actions that will be afterwards explained in the development section: create, record, edit,delete, summary, backup and uninstall.
-<p></details> 
+ 
+ ![Diagram](Systemdiagram.png)
+  
+ [Fig1][This picture shows the system diagram for the car rental program]
 
-<details><summary>Algorithms flow diagram</summary>
-create 
-record
-summarize
-<p></details> 
 
-<details><summary>Test plan</summary>
+Algorithms flow diagram
+==========================
+
+Create function flowchart 
+----------------
+
+![Diagram](createcar.png)
+
+
+Record function flowchart
+-----------
+
+![Diagram](recordcar.jpn)
+
+Edit function flowchart
+-----------
+
+![Diagram](editcar.jpn)
+
+
+Test plan
+================
  testing plan
   program---expected outcome
 <p></details> 
 
-Development
-----------
   
-<details><summary>Creating a new car function</summary>
+<details><summary>Development</summary>
+
+Creating a new car function
+==================
   
 The create script has the function of 
- The following steps summarize the algorithms to create a new car in the system:
+The following steps summarize the algorithms to create a new car in the system:
   
 1. Get input from the user 
 1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit. 
@@ -106,17 +123,18 @@ echo " " > db/$plate.txt
 bash script/frame1.sh "Car Created successfully"
 ```
 [This script shows the algorithms for creating the car]
-<p></details>
 
 
-<details><summary>recording the trip information</summary>
+Recording the trip 
+==========================
+
  The following steps summarize the algorithms to record trip info:
   
 1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
 1. Check that the car exists.
 1. If car exists then write the trip info in the $plate.txt file, without erasing previous trips.
 
-```
+```.sh 
 #!/bin/bash
 
 plate=$1
@@ -147,10 +165,12 @@ cd ../script
 bash frame1.sh "Trip info recorded succesfully"
 ```
 [This script shows the algorith for recording a car trip]
-<p></details>
 
-<details><summary>Editing a recorded data</summary>
-   The following steps summarize the algorithms to edit a car info:
+
+Editing a cars details
+==================
+
+The following steps summarize the algorithms to edit a car info:
 1. Check the number of arguments. If not equal to 4, then print "message" and exit
 1. atribute variables to the arguments
 1. move to the database file to locate the car file
@@ -158,7 +178,7 @@ bash frame1.sh "Trip info recorded succesfully"
 1. move to the script file to locate the frame script
 1. show results in frame script
   
-```
+```.sh
  #!/bin/bash
 
 #Check if arguments are complete
@@ -184,10 +204,11 @@ cd ../script
 bash frame1.sh "Trip info recorded succesfully"
 ```
 [This scripts shows the algorithms to edit a car info]
-<p></details>
-  
-  
-<details><summary>Delete</summary>
+
+
+Delete car
+==============
+
   The following steps summarize the algorithms to delete a car:
 1. Check the existance and number of arguments. If not equal to one, then print "message" and exit. If yes, continue.
 1. atribute a variable to the first argument
@@ -195,7 +216,7 @@ bash frame1.sh "Trip info recorded succesfully"
 1. check if car exists. If not, then print "message" and exit. Else, delete the car file and delete the car info in the main car file 
 1. Show results in frame
   
-```
+```.sh
 #!/bin/bash
 
 #This program deletes a created car
@@ -231,10 +252,10 @@ bash script/frame1.sh "Car deleted successfully"
 fi
 ```
 [The above script shows the algorithms to delete a car]
-<p></details>
 
 
-<details><summary>Summary</summary>
+Summary 
+=============
   The following steps summarize the algorithms to generate the summary of a car:
 
 1. Check the number of arguments. If 1 continue, if not "message", exit.
@@ -242,7 +263,7 @@ fi
 1. Read the record trips in the car license and for the first word in line (km)
 do summary for all if $1 arg =all
 
-```
+```.sh 
 #!/bin/bash
 
 
@@ -285,16 +306,17 @@ cd ../script/
 bash frame1.sh "Total distance travelled for $FILE was $total"
 exit
 ```
-<p></details>
 
-<details><summary>backup</summary>
+Backup
+===============
+
 The following steps summarize the algorithms to backup the data in the Car Rental App:
 1. Check the existance and number of arguments. If not equal to 1 then print "message", exit, else :
    1. cope the Car Rental App into a destination input by the user
    2. change the name to one that specifies the day of the backup
    3. show the results  
   
-```
+```.sh 
 #!/bin/bash
 
 #this program backs up the Rental Car app data into a directory chosen by the
@@ -351,10 +373,22 @@ The tail -n command is used to read the lines from the last one and the number (
 1. We had an error because of not putting the quotation mark 
 quotation marks makes the argument a phrase. Without the quotation mark the words will be read separetly not as a phrase and it might give tHE ERROR OF "too many arguments"
 
+Recommendations for the future
+======================================
+In the end the program fullfilled all the sucess criteria, however through out the development of the program, I realised that a few other features should have been added to the program: 
+1. Headers for the car.txt files and for the maincarfile.txt file: For an easy understanding of the data recorded, there should be a header for each row so that we know from looking which row corresponds to what. Eg.: 
+Eg.: In a car.txt file
+
+1. A feature to edit the cars trip info: The edit function available for this app only edits the cars details however its also possible for an error to occur when inputting the car trip info, for this reason its also important to have an edit option for the trip data.
+
+1. There should be a feature to delete specific lines in the files, not only delete car. For example, in a case where I run the create script when I wanted to run the record script, I would make the error of storing the trip data in the maincarfile.txt file and if in this case I try to solve it by running the delete function, it would delete the car and all the data related to it, and this is a big risk of loss of data. 
+
+1. A summary of a car should have more details. The actual summary function only shows the total distance travalled by the car but there are more revelant details that would be helpfull for the business,like, how many times was the car rented, the period of the year that it was most rented, or the average amount of time that it is usually rented for. 
+
+1. The backup should be automatic and the database versions should have a backup dates name, eg.: BACKUP/database_04.04.2019 ( this backup was done in april 4th of 2019 )
 summary : explain what type of testing was used (refer to the slides in )
 
 compare the criteria with the result, evidence for the succes criteria 
-recommendations for the future 
 move the test files to development 
 <p></details>
 
