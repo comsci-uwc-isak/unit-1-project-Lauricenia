@@ -272,6 +272,7 @@ cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/
 echo "Installation completed sucessfully"
 ```
 [Fig10][The above script shows the algorithms for installing the app]
+
 The following steps summarize the algorithms to create a new car in the system:
 1. Move to the desktop
 1. Create the CarRentalApp file
@@ -368,6 +369,7 @@ cd ../scripts
 bash frame1.sh "Trip info recorded successfully" 
 ```
 [Fig][This script shows the algorith for recording a car trip]
+
 The following steps summarize the algorithms to record trip info:  
 1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
 1. Check that the car exists.
