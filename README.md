@@ -6,11 +6,7 @@ Car Rental Minimal App
 A car rental management minimal app in Bash.
 
 Contents
------
-  1. [Planning](#planning)
-  1. [Design](#design)
-  1. [Development](#development)
-  1. [Evalution](#evaluation)
+-----------------------
 
  <details><summary>Planning</summary>
 
@@ -76,8 +72,167 @@ Edit function flowchart
 
 Test plan
 ================
- testing plan
-  program---expected outcome
+
+![Diagram]()
+  
+Test 1 : Installation
+---------------
+``.sh
+#!/bin/bash
+
+cd ~/Desktop/CarApp
+bash install
+
+echo " TESTING.... "
+#check if the Car Rental file and its componets exists
+if [ -d ~/Desktop/CarRentalApp/database ]; then
+  echo "Car Rental App and database was created..."
+else 
+   echo "Car Rental App or databse not created"
+   echo " Test 1: one step installation -- Failed "
+   exit
+fi
+ 
+  if [ -d ~/Desktop/CarRentalApp/scripts ]; then
+  echo "...scripts file was created."
+else 
+  echo "...scripts file not created"
+  echo " Test 1: one step installation -- Failed "
+  exit
+  fi
+
+    if [ -f ~/Desktop/CarRentalApp/scripts/create ]; then 
+     if [ -f ~/Desktop/CarRentalApp/scripts/record ]; then
+      if [ -f ~/Desktop/CarRentalApp/scripts/edit ]; then
+       if [ -f ~/Desktop/CarRentalApp/scripts/summarise ]; then
+         if [ -f ~/Desktop/CarRentalApp/scripts/backup ]; then
+          if [ -f ~/Desktop/CarRentalApp/scripts/delete ]; then
+           if [ -f ~/Desktop/CarRentalApp/scripts/frame1.sh ]; then
+            if [ -f ~/Desktop/CarRentalApp/scripts/unistall ]; then
+                echo " All scripts were copied "
+		echo "Test 1: One step installation -- Passed"
+            fi
+           fi
+          fi
+         fi
+       fi
+      fi
+     fi
+    else
+    echo "...scripts are not complete"
+    echo " Test 1: one step installation -- Failed "
+    exit 
+    fi
+``
+  
+Test 2 : Create car
+---------------
+```.sh
+#!/bin/bash
+
+#step 1: create a car using the script create
+cd ~/Desktop/CarRentalApp/scripts
+bash create TXM301 nissan red 9
+
+Echo "TESTING..."
+#step 2: check that the license file .txt was created 
+if [ -f "../database/TXM301.txt" ] ; then
+echo "A car file was created inside the database"
+else 
+echo "Car file was not found."
+echo "Test 2: create car -- Failed"
+exit
+fi
+
+#step 3: check that the car was added to the main file
+lastline=$( tail -n 1 ../database/maincarfile.txt )
+if [ "TXM301 nissan red 9" == "$lastline" ]; then 
+	echo "The car details were recorded into maincarfile.txt"
+        echo "Test 2: create car -- Passed"
+else
+	echo "Car details were not recorded into maincarfile.txt"
+	echo "Test 2: create car -- Failed"
+fi
+
+```
+
+Test 3: Record trip
+--------------
+```.sh
+#!/bin/bash
+
+cd ~/Desktop/CarRentalApp/scripts
+bash record TXM301 20 4 4 
+
+#step 2: check that the trip info was recorded
+lastline=$( tail -n 1 ../database/TXM301.txt ) 
+if [ "20 4 4" == "$lastline" ] ; then
+	echo "The car's trip info was recorded into the car's file"
+	echo "Test 3: Record trip -- Passed"
+else 
+	echo "The ca's trip info was not recorded into the car's file"
+	echo "Test 3: Record trip -- Failed"
+fi
+
+```
+Test 4: Edit car
+------------
+``.sh
+#!/bin/bash
+
+cd ~/Desktop/CarRentalApp/scripts
+bash edit TXM301 toyota blue 10 
+
+Echo "TESTING ..."
+
+lastline=$( tail -n 1 ../database/maincarfile.txt )
+
+#Check that the old version was deleted
+if [ "TXM301 toyota blue 10" == "$lastline" ]; then
+        echo "The old version was deleted "
+else
+        echo "Test 4: Edit car -- Failed"
+        exit
+fi
+
+
+if [ "TXM301 nissan red 9" != "$lastline" ]; then
+	echo "The new version was recorded"
+        echo "Test 4: Edit car -- Passed"
+else
+	echo "The new version was not recorded"
+        echo "Test 4: Edit car -- Failed"
+fi
+
+``
+
+Test 5: Delete car
+-------------
+``.sh
+#!/bin/bash
+
+cd ~/Desktop/CarRentalApp/scripts
+bash delete TXM301
+
+#Check that the car file was deleted
+if [ ! -f ../database/TXM301.txt ] ; then
+	echo "The car file was deleted"
+else 
+	echo "Error. File not deleted."
+	echo "Test 5: Delete car -- Failed"
+exit
+fi 
+
+lastline=$( tail -n 1 ../database/maincarfile.txt )
+if [ "TXM301 toyota blue 10" != "$lastline" ]; then
+	echo "The car's details were deleted from maincarfile.txt"
+        echo "Test 5: Delete car -- Passed"
+else
+	echo " The car's details were not deleted from maincarfile.txt"     
+	echo "Test 5: Delete car -- Failed"
+fi
+
+``
 <p></details> 
 
   
