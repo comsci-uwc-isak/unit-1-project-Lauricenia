@@ -73,7 +73,7 @@ Edit function flowchart
 Test plan
 ================
 
-![Diagram]()
+![Diagram](Testplan.png)
   
 Test 1 : Installation
 ---------------
@@ -689,12 +689,8 @@ Lauricenia Buque
 
 
 
-Evaluation
-----------------------
 
-how this tests files show that the programs are working, type of tests
-
-<details><summary>Test 1</summary>
+<details><summary>Evaluation</summary>
 1. First time running the program we had one issue: the test file needed to move to the main folder
   
 ```
@@ -719,6 +715,10 @@ The tail -n command is used to read the lines from the last one and the number (
 1. Then we compare the file we created for the test with the lastline in the maincarfile
 1. We had an error because of not putting the quotation mark 
 quotation marks makes the argument a phrase. Without the quotation mark the words will be read separetly not as a phrase and it might give tHE ERROR OF "too many arguments"
+
+Evidence for sucess of criteria 
+==============================
+![Diagram]()
 
 Recommendations for the future
 ======================================
