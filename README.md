@@ -42,7 +42,7 @@ System diagram
  The input of data will be made through a bash terminal using the scripts that we will be uploaded together with the Car Rental App through installation. The data will be directed to the database file that is also within the Car Rental App folder.
  Our scripts comprehend 8 actions that will be afterwards explained in the development section: create, record, edit,delete, summary, backup and uninstall.
  
- ![Diagram](Systemdiagram.png)
+ ![Diagram](Systemdiagram)
   
  [Fig1][This picture shows the system diagram for the car rental program]
 
