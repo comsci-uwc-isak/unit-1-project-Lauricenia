@@ -727,7 +727,7 @@ Eg.: In a car.txt file
 1. A summary of a car should have more details. The actual summary function only shows the total distance travalled by the car but there are more revelant details that would be helpfull for the business,like, how many times was the car rented, the period of the year that it was most rented, or the average amount of time that it is usually rented for. 
 
 1. The backup should be automatic and the database versions should have a backup dates name, eg.: BACKUP/database_04.04.2019 ( this backup was done in april 4th of 2019 ). One more thing that would improve the backup function is having the option of backing up in an external drive. In a case of an accident with the computer that would be the only way to recover the data.
-summary : explain what type of testing was used (refer to the slides in )
+summary : explain what type of testing was used (refer to the slides in).
 
 <p></details>
 
