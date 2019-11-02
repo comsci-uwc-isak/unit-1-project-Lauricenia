@@ -691,34 +691,11 @@ Lauricenia Buque
 
 
 <details><summary>Evaluation</summary>
-1. First time running the program we had one issue: the test file needed to move to the main folder
-  
-```
-  .sh
-cd ../
-```
-
-This is necessary because the create.sh resids in the main folder whereas the test file is inside the /tests folders.
-
-1. The second run of the the test file was also unsucessfull because the database folder was not existent. Also the created program did not store the license file inside the database 
-<p></details>
-
-<details><summary>Test 2</summary>
-1. First we check if the car was added to the mainfile
-In the shell script we used this line:
-  
-```
-.sh
-lastline= $( tail -n 1 Databse/maincarfile.txt )
-```
-The tail -n command is used to read the lines from the last one and the number (1) is the number of the lines that have to be read. Everything together is doing **read 1 line starting from the last one**
-1. Then we compare the file we created for the test with the lastline in the maincarfile
-1. We had an error because of not putting the quotation mark 
-quotation marks makes the argument a phrase. Without the quotation mark the words will be read separetly not as a phrase and it might give tHE ERROR OF "too many arguments"
 
 Evidence for sucess of criteria 
 ==============================
-![Diagram]()
+![Diagram](evidence1.png)
+![Diagram](evidence2.png)
 
 Recommendations for the future
 ======================================
