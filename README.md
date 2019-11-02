@@ -19,11 +19,9 @@ My client is an onwer of a car rental bussiness. His company has a range of cars
  <p></details>
 
  <details><summary>Proposed Solution</summary>
-Since we dont know about any prior experience of the stakeholders with a computer system, we have to follow all the requirements given by the client entirely and successfully because we assume they must be according the stakeholders capacities and the technology present in the company. To make the installation easy and clear, its necessary to use a sotware system that already has a terminal to reduce the work of going through its instalation, which would make the process of installing the app less simple and longer. The chosen terminal was bash... 
+Since we dont know about any prior experience of the stakeholders with a computer system, we have to follow all the requirements given by the client entirely and successfully because we assume they must be according the stakeholders capacities and the technology present in the company. To make the installation easy and clear, its necessary to use a sotware system that already has the chosen terminal to reduce the work of going through its instalation, which would make the process of installing the app less simple and longer. I chose to work on bash because I am familiar with it, its a free software that can be found in most operating systems except for window bases. These include a lot of linux distributions, macs ls, ios, android among otherrs. It can generate txt files and has the man page feature. 
 Git Hub was used to record all the steps in the process of creating the Car Rental App. This helps in the organization to keep on track on what is done and what needs to be done. 
   https://techterms.com/definition/bash
-  
-  unique featurew
   https://devdocs.io/bash/html_node/bash-features#Bash-Features
   <p></details>
  
@@ -32,12 +30,11 @@ Git Hub was used to record all the steps in the process of creating the Car Rent
 
 1. A car can be created and stored in the database
 1. A trip can be recorded for a given car
-1. A summary (total distance travel, average) of trips can be measured for a particular car
+1. A summary (total distance traveled) of trips can be measured for a particular car
 1. A car information can be edited
 1. A basic backup system is available
-1. The user can easily understand the commands by the straigtforward comments and instructions 
 1. Installation is simple-> it does not require additional software, one step process
-1. A car information can be deleted
+1. A car can be deleted
 1. The application can be uninstalled 
  <p></details>
  
@@ -47,7 +44,7 @@ Design
   ![SystemDiagram]() 
   [Fig1][This picture shows the system diagram for the car rental program]
   
- The System diagram is ...
+ 
  To design the system diagram of the car rental app we followed the requirements of the client for the desirable outcomes. 
  The input of data will be made through a bash terminal using the scripts that we will be uploaded together with the Cra Rental App through installation. The data will be directed to the database file tha is also within the Car Rental App folder.
  Our scripts comprehend 8 actions that will be afterwards explained in the development section: create, record, edit,delete, summary, backup and uninstall.
