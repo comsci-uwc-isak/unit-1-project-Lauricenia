@@ -12,18 +12,16 @@ Contents
 
 Definition of the problem
 =========================
-My client is an onwer of a car rental bussiness. His company has a range of cars availbale for rent on a price that varies on the hours of use of the car. The owner requests a computer program for recording information about their orders with the purpose of collecting basic information about the distance driven for each car and points out specific features: easy commands to allow to create a car, record a trip distance, query the trip history a car, edit, delete a car and see the total statistics. One more requirement of the client was a simple terminal based program with a simple and transparent installation. Theres no reference to prior experience with a computer system program. 
+My client, Mr. xx is an onwer of a car rental bussiness. His company has a range of cars availbale for rent on a price that varies on the hours of use. The owner requests a computer program for recording information about their orders with the purpose of collecting basic information about the distance driven for each car and points out specific features: easy commands to allow to create a car, record a trip distance, query the trip history a car, edit, delete a car and see the total statistics. One more requirement of the client was a simple terminal based program with a simple and transparent installation. Theres no reference to prior experience with a computer system program. 
 
 Proposed Solution
 =====================
-Since we dont know about any prior experience of the stakeholders with a computer system, we have to follow all the requirements given by the client entirely and successfully because we assume they must be according the stakeholders capacities and the technology present in the company. To make the installation easy and clear, its necessary to use a sotware system that already has the chosen terminal to reduce the work of going through its instalation, which would make the process of installing the app less simple and longer. I chose to work on bash because I am familiar with it, its a free software that can be found in most operating systems except for window bases. These include a lot of linux distributions, macs ls, ios, android among otherrs. It can generate txt files and has the man page feature. 
-Git Hub was used to record all the steps in the process of creating the Car Rental App. This helps in the organization to keep on track on what is done and what needs to be done. 
-  https://techterms.com/definition/bash
-  https://devdocs.io/bash/html_node/bash-features#Bash-Features
-
+Since we dont know about any prior experience of the stakeholders with a computer system, we have to follow all the requirements given by the client entirely and successfully because we assume they must be according the stakeholders capacities and the technology available in the company. To make the installation easy and clear, its necessary to use a software system that already has the chosen terminal to reduce the work of going through its instalation, which would make the process of installing the app less simple and longer. I chose to work on bash because I am familiar with it, its a free software that can be found in most operating systems except the WINDOWS based. These include a lot of Linux distributions, macOS, iOS, Android, among others. It can generate txt files and has the man page feature. 
+Git Hub was used to record all the steps in the process of creating the Car Rental App. This helped in the organization and  keeping on track on what was done and what needed to be done. 
+ 
 Sucess Criteria
 ===================
-  These are the measurable outcomes :
+These are the measurable outcomes :
 
 1. A car can be created and stored in the database
 1. A trip can be recorded for a given car
@@ -41,7 +39,7 @@ Sucess Criteria
 System diagram
 =======================
  To design the system diagram of the car rental app we followed the requirements of the client for the desirable outcomes. 
- The input of data will be made through a bash terminal using the scripts that we will be uploaded together with the Car Rental App through installation. The data will be directed to the database file tha is also within the Car Rental App folder.
+ The input of data will be made through a bash terminal using the scripts that we will be uploaded together with the Car Rental App through installation. The data will be directed to the database file that is also within the Car Rental App folder.
  Our scripts comprehend 8 actions that will be afterwards explained in the development section: create, record, edit,delete, summary, backup and uninstall.
  
  ![Diagram](Systemdiagram.png)
@@ -51,24 +49,24 @@ System diagram
 
 Algorithms flow diagram
 ==========================
+Some flowcharts of the program's functions: 
 
 Create function flowchart 
 ----------------
-
 ![Diagram](createcar.png)
 [fig2][This picture shows the flowchart of the create function]
 
 Record function flowchart
 -----------
-
 ![Diagram](recordcar.jpn)
 [fig3][This picture shows the flowchart of the record function]
 
 Edit function flowchart
 -----------
-
 ![Diagram](editcar.jpn)
 [fig4][This picture shows the flowchart of the edit function]
+
+
 
 Test plan
 ================
@@ -124,7 +122,8 @@ else
     exit 
     fi
 ``
-  
+[Fig5][The above script shows the algorithms for Test 1]
+ 
 Test 2 : Create car
 ---------------
 ```.sh
@@ -155,6 +154,7 @@ else
 fi
 
 ```
+[Fig6][The above script shows the algorithms for Test 2]
 
 Test 3: Record trip
 --------------
@@ -175,6 +175,8 @@ else
 fi
 
 ```
+[Fig7][The above script shows the algorithms for Test 3]
+
 Test 4: Edit car
 ------------
 ``.sh
@@ -205,6 +207,7 @@ else
 fi
 
 ``
+[Fig8][The above script shows the algorithms for Test 4]
 
 Test 5: Delete car
 -------------
@@ -233,15 +236,17 @@ else
 fi
 
 ``
+[Fig9][The above script shows the algorithms for Test 5]
 <p></details> 
 
-  
+
+
 <details><summary>Development</summary>
   
 Installation
 ====================
 
-The installation function creates the app's main folder and its components: database folder and scripts folder 
+The installation function creates the app's main folder and its components: database folder and scripts folder.
 
 ```.sh
 #!/bin/bash
@@ -250,7 +255,6 @@ The installation function creates the app's main folder and its components: data
 #minimal car rental app 
 
 echo "Starting installation"
-
 
 #Moving to the desired directory
 cd ~/Desktop
@@ -266,8 +270,15 @@ mkdir database
 
 cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/
 echo "Installation completed sucessfully"
-
 ```
+[Fig10][The above script shows the algorithms for installing the app]
+The following steps summarize the algorithms to create a new car in the system:
+1. Move to the desktop
+1. Create the CarRentalApp file
+1. move to the CarRentalApp 
+1. create the database folder
+1. copy the scripts folder from the CarApp file (installation file)
+
 problems and solutions
 ----------------------
 In the first draft of the script, the user had to add the location for the installation of the app but since we dont know if the user knows how to write paths, I had to set a location and I chose desktop because its the most acessible location.
@@ -278,14 +289,6 @@ Creat
 ==================
   
 The create function creates a car file and records the car's details in the maincarfile.txt file.
-
-The following steps summarize the algorithms to create a new car in the system:
-  
-1. Get input from the user 
-1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit. 
-1. Write to main file with one extra line. Not erasing other entries. 
-1. Create car trip file with 4 case for the 4 arguments plate.txt
-
 
 ```.sh
 #!/bin/bash
@@ -322,7 +325,13 @@ bash frame1.sh "Car Created successfully"
 
 fi
 ```
-[This script shows the algorithms for creating the car]
+[Fig11][This script shows the algorithms for creating the car]
+
+The following steps summarize the algorithms to create a new car in the system:
+1. Get input from the user 
+1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit. 
+1. Write to main file with one extra line. Not erasing other entries. 
+1. Create car trip file with 4 case for the 4 arguments plate.txt
 
 problems and solutions: 
 -----------------
@@ -332,12 +341,7 @@ The frame was not showing. This was solved by specfiying the location of the fra
 Record
 ==========================
 The record function stores a car's trip information in the car's file.
- The following steps summarize the algorithms to record trip info:
-  
-1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
-1. Check that the car exists.
-1. If car exists then write the trip info in the $plate.txt file, without erasing previous trips.
-
+ 
 ```.sh 
 #!/bin/bash
 
@@ -363,19 +367,15 @@ fi
 cd ../scripts
 bash frame1.sh "Trip info recorded successfully" 
 ```
-[This script shows the algorith for recording a car trip]
-
+[Fig][This script shows the algorith for recording a car trip]
+The following steps summarize the algorithms to record trip info:  
+1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
+1. Check that the car exists.
+1. If car exists then write the trip info in the $plate.txt file, without erasing previous trips.
 
 Edit
 ==================
 The edit function edits a car's details stored in the maincarfile.txt file.
-The following steps summarize the algorithms to edit a car info:
-1. Check the number of arguments. If not equal to 4, then print "message" and exit
-1. atribute variables to the arguments
-1. move to the database file to locate the car file
-1. check if car file exists. If not, then print "message" and exit. Else, copy the arguments to the car file.
-1. move to the script file to locate the frame script
-1. show results in frame script
   
 ```.sh
  #!/bin/bash
@@ -418,7 +418,15 @@ cd ../scripts
 #presenting the results
 bash frame1.sh "Car edited successfully"
 ```
-[This scripts shows the algorithms to edit a car info]
+[Fig][The above script shows the algorithms to edit a car info]
+
+The following steps summarize the algorithms to edit a car info:
+1. Check the number of arguments. If not equal to 4, then print "message" and exit
+1. atribute variables to the arguments
+1. move to the database file to locate the car file
+1. check if car file exists. If not, then print "message" and exit. Else, copy the arguments to the car file.
+1. move to the script file to locate the frame script
+1. show results in frame script
 
 Problems and solutions
 -----------------
@@ -427,12 +435,6 @@ The old version being replaced was not being erased. This problem was solved by 
 Delete 
 ==============
 The delete function deletes a car's file and its record in the maincarfile.txt file.
-  The following steps summarize the algorithms to delete a car:
-1. Check the existance and number of arguments. If not equal to one, then print "message" and exit. If yes, continue.
-1. atribute a variable to the first argument
-1. move to the database directory to locate the car file
-1. check if car exists. If not, then print "message" and exit. Else, delete the car file and delete the car info in the main car file 
-1. Show results in frame
   
 ```.sh
 #!/bin/bash
@@ -472,18 +474,18 @@ bash scripts/frame1.sh "Car deleted successfully"
 fi
  
 ```
-[The above script shows the algorithms to delete a car]
+[Fig][The above script shows the algorithms to delete a car]
 
+The following steps summarize the algorithms to delete a car:
+1. Check the existance and number of arguments. If not equal to one, then print "message" and exit. If yes, continue.
+1. atribute a variable to the first argument
+1. move to the database directory to locate the car file
+1. check if car exists. If not, then print "message" and exit. Else, delete the car file and delete the car info in the main car file 
+1. Show results in frame
 
 Summary 
 =============
 The summary fucntion displays the total distance travelled by a car.
-  The following steps summarize the algorithms to generate the summary of a car:
-
-1. Check the number of arguments. If 1 continue, if not "message", exit.
-1. Check if the car exists. If yes continue, if not "message", exit.
-1. Read the record trips in the car license and for the first word in line (km)
-do summary for all if $1 arg =all
 
 ```.sh 
 #!/bin/bash
@@ -530,15 +532,17 @@ done < car.txt
 cd ../scripts/
 bash frame1.sh "Total distance travelled for $car was $total"
 ```
+[Fig][The above script shows the algorithms for the backup function]
+
+The following steps summarize the algorithms to generate the summary of a car:
+1. Check the number of arguments. If 1 continue, if not "message", exit.
+1. Check if the car exists. If yes continue, if not "message", exit.
+1. Read the record trips in the car license and for the first word in line (km)
+do summary for all if $1 arg =all
 
 Backup
 ===============
 The backup function creates a backup file and copies the database folder from the App main folder.
-The following steps summarize the algorithms to backup the data in the Car Rental App:
-1. Check the existance and number of arguments. If not equal to 1 then print "message", exit, else :
-   1. cope the Car Rental App into a destination input by the user
-   2. change the name to one that specifies the day of the backup
-   3. show the results  
   
 ```.#!/bin/bash
 
@@ -552,6 +556,14 @@ cd ../scripts
 bash frame1.sh "Backup was successfully"  
 
 ```
+[Fig][The above script shows the algorithms for the backup function]
+
+The following steps summarize the algorithms to backup the data in the Car Rental App:
+1. Check the existance and number of arguments. If not equal to 1 then print "message", exit, else :
+   1. cope the Car Rental App into a destination input by the user
+   2. change the name to one that specifies the day of the backup
+   3. show the results  
+   
 Problems and solutions
 --------------------
 The first backup script as the installation script also had the option of the letting the user input the location. This was changed by setting the desktop as the default location for the same reason as of the installation script.
@@ -574,120 +586,125 @@ rm -r RentalCarApp
 Man pages
 ================
 
+Install
+----------
+``.sh
+.TH man 6 "28t Oct 2019" "1.0" "Install man page"
+.SH NAME
+install \-install app 
+.SH SYNOPSIS
+bash install
+.SH DESCRIPTION 
+The install function creates the main folder for the app (CArRentalApp) and its components: database and scripts
+.SH AUTHOR
+Lingye
+``
 create
 ----------
+``.sh
 .TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
 .SH NAME
 create \-create a new car 
 .SH SYNOPSIS
 bash create [license] [model] [color] [passengers]
-
 .SH DESCRIPTION
-
+The create function creates a car file and records the car's details in the maincarfile.txt file. The user needs to input 4 
+arguments (car details) when running the script in the order of license, model, color and passengers.
 .SH EXAMPLES
 bash create LXH798 Mazda Red 3
- 
 .SH AUTHOR
-Lauricenia Buque 
-
+Dr. Ruben Pinzon
+``
 record
 ----------
-.TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
+``.sh
+.TH man 6 "28t Oct 2019" "1.0" "Record trip man page"
 .SH NAME
-create \-create a new car 
+record \-crecord a trip 
 .SH SYNOPSIS
-bash create [license] [model] [color] [passengers]
-
+bash record [license] [km] [date-out] [date-in]
 .SH DESCRIPTION
-
+The record function stores a car's trip information in the car's file. The user needs to input 4 
+arguments (trip info ) when running the script in the order of license km date-out and date-in.
 .SH EXAMPLES
-bash create LXH798 Mazda Red 3
- 
+bash create LXH798 20 04.04.2019  04.05.2019
 .SH AUTHOR
-Lauricenia Buque 
-
+Dr. Ruben Pinzon
+``
 edit
 -------
-.TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
+``.sh
+.TH man 6 "28t Oct 2019" "1.0" "Edit a car man page"
 .SH NAME
-create \-create a new car 
+edit \-edit a car 
 .SH SYNOPSIS
-bash create [license] [model] [color] [passengers]
-
+bash edit [license] [model] [color] [passengers]
 .SH DESCRIPTION
-
+The edit function edits a car's details stored in the maincarfile.txt file. The user needs to input 4 
+arguments (new version of car details) when running the script in the order of license, model, color and passengers.
 .SH EXAMPLES
-bash create LXH798 Mazda Red 3
- 
+bash edit LXH798 Nissan Blue 4
 .SH AUTHOR
-Lauricenia Buque 
-
+Dr. Ruben Pinzon
+``
 backup
 -------
-.TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
+``.sh
+.TH man 6 "28t Oct 2019" "1.0" "Backup man page"
 .SH NAME
-create \-create a new car 
+backup \- backup data 
 .SH SYNOPSIS
-bash create [license] [model] [color] [passengers]
-
-.SH DESCRIPTION
-
-.SH EXAMPLES
-bash create LXH798 Mazda Red 3
- 
+bash backup
+.SH DESCRIPTION 
+The backup function creates a backup file and copies the database folder from the App main folder. The user just has to run the script using bash.
 .SH AUTHOR
 Lauricenia Buque 
-
+``
 summary
 --------
-.TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
+``.sh
+.TH man 6 "28t Oct 2019" "1.0" "Summary man page"
 .SH NAME
-create \-create a new car 
+summary \- summarize distance travelled
 .SH SYNOPSIS
-bash create [license] [model] [color] [passengers]
-
+bash summary [license] 
 .SH DESCRIPTION
-
+The summary function displays the total distance travelled by a car. The user needs to input 1 
+arguments (license) when running the script.
 .SH EXAMPLES
-bash create LXH798 Mazda Red 3
- 
+bash summary LXH798 
 .SH AUTHOR
-Lauricenia Buque 
-
+Dr. Ruben Pinzon 
+``
 delete
 -------
-.TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
+``.sh
+.TH man 6 "28t Oct 2019" "1.0" "delete car man page"
 .SH NAME
-create \-create a new car 
+delete \-delete a new car 
 .SH SYNOPSIS
-bash create [license] [model] [color] [passengers]
-
+bash delete [license]
 .SH DESCRIPTION
-
+The delete function deletes a car's file and its record in the maincarfile.txt file. The user needs to input 1 
+arguments (license) when running the script.
 .SH EXAMPLES
-bash create LXH798 Mazda Red 3
- 
+bash delete LXH798
 .SH AUTHOR
-Lauricenia Buque 
-
+Fuma 
+``
 uninstall
 ----------
-.TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
+``.sh.TH man 6 "28t Oct 2019" "1.0" "uninstall app man page"
 .SH NAME
-create \-create a new car 
+uninstall \-uninstall app 
 .SH SYNOPSIS
-bash create [license] [model] [color] [passengers]
-
+bash uninstall
 .SH DESCRIPTION
-
-.SH EXAMPLES
-bash create LXH798 Mazda Red 3
- 
+This function deletes the app's main folder as well as all the components within it. The user just has to run the script using bash.
 .SH AUTHOR
 Lauricenia Buque
+``
 <p></details>
-
-
 
 
 <details><summary>Evaluation</summary>
@@ -712,7 +729,13 @@ Eg.: In a car.txt file
 1. The backup should be automatic and the database versions should have a backup dates name, eg.: BACKUP/database_04.04.2019 ( this backup was done in april 4th of 2019 ). One more thing that would improve the backup function is having the option of backing up in an external drive. In a case of an accident with the computer that would be the only way to recover the data.
 summary : explain what type of testing was used (refer to the slides in )
 
-compare the criteria with the result, evidence for the succes criteria 
-move the test files to development 
 <p></details>
 
+<details><summary>References</summary>
+
+Christensson, Per. "Bash Definition." TechTerms. Sharpened Productions, 15 August 2013. Web. 02 November 2019. <https://techterms.com/definition/bash>.
+
+Gite, Vivek, et al. “HowTo: Linux / UNIX Create a Manpage.” NixCraft, Vivek Gite, 16 Nov. 2017, www.cyberciti.biz/faq/linux-unix-creating-a-manpage/.
+
+Pandey, Parul. “Basics of BASH for Beginners.” Medium, Towards Data Science, 26 July 2019, towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a.
+<p></details>
