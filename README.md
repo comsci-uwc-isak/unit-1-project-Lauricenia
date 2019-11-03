@@ -774,4 +774,5 @@ Gite, Vivek, et al. “HowTo: Linux / UNIX Create a Manpage.” NixCraft, Vivek 
 
 Pandey, Parul. “Basics of BASH for Beginners.” Medium, Towards Data Science, 26 July 2019, towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a.
 
+Planning &amp; System Installation, ib.compscihub.net/wp-content/uploads/2018/06/1.1.7.pdf.
 <p></details>
