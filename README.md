@@ -249,8 +249,6 @@ fi
 
 ```
 [Fig9][The above script shows the algorithms for Test 5]
-<p></details> 
-
 
 Test 6: Uninstall app
 -----------
@@ -272,6 +270,9 @@ echo "Test 6: Uninstall app -- Failed"
 fi
 
 ```
+[Fig10][The above script shows the algorithms for Test 6]
+<p></details> 
+
 <details><summary>Development</summary>
   
 Installation 
@@ -303,7 +304,7 @@ cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/
 
 echo "Installation completed sucessfully"
 ```
-[Fig10][The above script shows the algorithms for installing the app]
+[Fig11][The above script shows the algorithms for installing the app]
 
 The following steps summarize the algorithms to create a new car in the system:
 1. Move to the desktop
@@ -357,14 +358,14 @@ bash frame1.sh "Car Created successfully"
 
 fi
 ```
-[Fig11][This script shows the algorithms for creating the car]
+[Fig12][The above script shows the algorithms for creating the car]
 
 The following steps summarize the algorithms to create a new car in the system:
 1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit.
 1. Atribute variables 
 1. move to the database folder and write to ```maincarfile.txt``` with one extra line. Not erasing other entries. 
 1. Create car trip file ```$plate.txt```
-1.Move to scripts folder and run the frame script
+1.Move to scripts folder and run the frame script to show the results
 
 problems and solutions: 
 -----------------
@@ -399,7 +400,7 @@ fi
 cd ../scripts
 bash frame1.sh "Trip info recorded successfully" 
 ```
-[Fig][This script shows the algorith for recording a car trip]
+[Fig13][The above script shows the algorith for recording a car trip]
 
 The following steps summarize the algorithms to record trip info:  
 1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
@@ -452,14 +453,14 @@ cd ../scripts
 #presenting the results
 bash frame1.sh "Car edited successfully"
 ```
-[Fig][The above script shows the algorithms to edit a car info]
+[Fig14][The above script shows the algorithms to edit a car info]
 
 The following steps summarize the algorithms to edit a car info:
 1. Check the number of arguments. If not equal to 4, then print "message" and exit
 1. Atribute variables to the arguments
 1. Move to the database folder and check if car file exists. If not, then print "message" and exit. 
 1. If yes, erase the old data version and write the new version into```maincarfile.txt``` without erasing other cars
-1. Move to the script folder and run the frame script
+1. Move to the script folder and run the frame script to show the results
 
 Problems and solutions
 -----------------
@@ -508,13 +509,13 @@ bash scripts/frame1.sh "Car deleted successfully"
 fi
  
 ```
-[Fig][The above script shows the algorithms to delete a car]
+[Fig15][The above script shows the algorithms to delete a car]
 
 The following steps summarize the algorithms to delete a car:
 1. Check the existance and number of arguments. If not equal to one, then print "message" and exit. If yes, continue.
 1.Atribute a variable to the argument
 1.Move to the database folder and check if car exists. If not, then print "message" and exit. Else, delete the car file ```$ plate.txt``` and delete the car info in the ```maincarfile.txt``` 
-1. Move to the script folder and run the frame script
+1. Move to the script folder and run the frame script to show the results.
 
 Summary 
 =============
@@ -565,7 +566,7 @@ done < $plate.txt
 cd ../scripts/
 bash frame1.sh "Total distance travelled for $car was $total"
 ```
-[Fig][The above script shows the algorithms for the backup function]
+[Fig16][The above script shows the algorithms for the backup function]
 
 The following steps summarize the algorithms to generate the summary of a car:
 1. Check the number of arguments. If 1 continue, if not "message", exit.
@@ -573,6 +574,7 @@ The following steps summarize the algorithms to generate the summary of a car:
 1. Read the record trips in the car file ```$plate.txt``` and for the first word in line (km)
 do sum for all lines.
 1. Move to the script folder and run the frame script to show the results
+
 Backup
 ===============
 The backup function creates a backup file and copies the database folder from the App main folder.
@@ -613,7 +615,7 @@ cd ~/Desktop
 #delete the app directory
 rm -r RentalCarApp
 ``
-[Fig][The above script shows the algorithms for the uninstall function]
+[Fig17][The above script shows the algorithms for the uninstall function]
 The following step summarize the algorithms to backup the data in the Car Rental App:
 1. Move to the Desktop and delete the ```CarRentalApp``` folder
 
@@ -754,7 +756,8 @@ Recommendations for the future
 ======================================
 In the end it was possible to achieve all the sucess criteria, however through out the development of the program, I realised that a few other features should have been added to the program: 
 1. Headers for the car.txt files and for the maincarfile.txt file: For an easy understanding of the data recorded, there should be a header for each row so that we know from looking which row corresponds to what. Eg.: 
-Eg.: In a car.txt file
+Eg.: In a car.txt file ---
+![Diagram](headersexample.png)
 
 1. A feature to edit the cars trip info: The edit function available for this app only edits the cars details however its also possible for an error to occur when inputting the car trip info, for this reason its also important to have an edit option for the trip data.
 
