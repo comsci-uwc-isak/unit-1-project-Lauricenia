@@ -1,0 +1,33 @@
+#!/bin/bash
+ 
+#This program creates a car and record the orders of a car rental bussiness 
+
+#Create a car
+#Check number of arguments
+if [ $# -ne 4 ]; then
+echo " Incomplete input. Please enter Plate, Model, Colour and PP "
+exit
+
+else
+ 
+#If number of arguments is correct. Continue
+plate=$1
+model=$2
+color=$3
+pp=$4
+
+#Record order
+#moving to the directory where we can find the db file inside the RentalCarApp
+#folder. Now we are inside the scripts file, so we will move one level up.
+cd ../database
+
+#Adding new entry to the file maincarfile.txt without erasing.
+echo "$plate $model $color $pp" >> maincarfile.txt
+#creating 
+echo " " > $plate.txt
+
+cd ../scripts
+#presenting the results in a frame
+bash frame1.sh "Car Created successfully"
+
+fi

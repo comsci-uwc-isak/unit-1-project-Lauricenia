@@ -1,0 +1,12 @@
+.TH man 6 "28t Oct 2019" "1.0" "delete car man page"
+.SH NAME
+delete \-delete a new car 
+.SH SYNOPSIS
+bash delete [license]
+.SH DESCRIPTION
+The delete function deletes a car's file and its record in the maincarfile.txt file. The user needs to input 1 
+arguments (license) when running the script.
+.SH EXAMPLES
+bash delete LXH798
+.SH AUTHOR
+Lauricenia Buque

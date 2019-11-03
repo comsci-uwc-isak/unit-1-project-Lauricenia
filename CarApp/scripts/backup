@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#this program backs up the Rental Car app data into a directory chosen by the
+#user
+
+cp -a ~/Desktop/RentalCarApp/database ~/Desktop/BACKUP
+echo "Successfully backed up into Desktop."
+
+cd ../scripts
+bash frame1.sh "Backup was successfully" 

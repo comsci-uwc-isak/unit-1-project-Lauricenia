@@ -1,0 +1,45 @@
+#!/bin/bash
+
+
+#This script generates the summary of the car
+
+bash frame1.sh Summary
+
+#Check if the user inputs any argument (check number of arguments) 
+if [ $# -ne 1 ]; then
+echo "No argument inputed.Run the program again and enter the car license"
+exit
+fi
+
+
+#Check if file exists in database
+car=$1
+
+#move to the desirable directory 
+cd ../database
+
+#Another option is moving to the database before checking the file
+if [ ! -f $car.txt ]; then
+ echo " Car not created. $car does not exist in the database "
+ exit
+fi
+
+#Summary of the car 
+total=0
+
+while read line; 
+do
+
+#Show the sum of the km
+for km in $line 
+do 
+  (( total=$total+$km ))
+break
+done
+
+done < $car.txt
+
+#Step 4: Show result nicely 
+cd ../scripts/
+bash frame1.sh "Total distance travelled for $car was $total"
+

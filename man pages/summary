@@ -1,0 +1,12 @@
+.TH man 6 "28t Oct 2019" "1.0" "Summary man page"
+.SH NAME
+summary \- summarize distance travelled
+.SH SYNOPSIS
+bash summary [license] 
+.SH DESCRIPTION
+The summary function displays the total distance travelled by a car. The user needs to input 1 
+arguments (license) when running the script.
+.SH EXAMPLES
+bash summary LXH798 
+.SH AUTHOR
+Lauricenia Buque

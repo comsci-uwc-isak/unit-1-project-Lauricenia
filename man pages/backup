@@ -1,0 +1,10 @@
+.TH man 6 "28t Oct 2019" "1.0" "Backup man page"
+.SH NAME
+backup \- backup data 
+.SH SYNOPSIS
+bash backup
+.SH DESCRIPTION 
+The backup function creates a backup file and copies the database folder from the App main folder. The user just has to run the script using bash.
+.SH AUTHOR
+Lauricenia Buque 
+

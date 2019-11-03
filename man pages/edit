@@ -1,0 +1,12 @@
+.TH man 6 "28t Oct 2019" "1.0" "Edit a car man page"
+.SH NAME
+edit \-edit a car 
+.SH SYNOPSIS
+bash edit [license] [model] [color] [passengers]
+.SH DESCRIPTION
+The edit function edits a car's details stored in the maincarfile.txt file. The user needs to input 4 
+arguments (new version of car details) when running the script in the order of license, model, color and passengers.
+.SH EXAMPLES
+bash edit LXH798 Nissan Blue 4
+.SH AUTHOR
+Lauricenia Buque

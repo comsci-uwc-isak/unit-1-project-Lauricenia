@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#This program edits the recorded information of existing car in the 
+#maincarfile
+
+
+#Check if the number of arguments equals to 4
+if [ $# -ne 4 ]; then
+echo "Error with the number of arguments"
+echo "Enter License Model colour and passengers"
+exit
+fi
+
+
+#atributing variables
+plate=$1
+model=$2
+colour=$3
+pp=$4
+
+#moving to the database
+cd ../database
+
+#checking if car exists
+if [ ! -f $plate.txt ]; then
+echo "Car does not exit"
+fi
+
+#find the line and replace the wrong information with the new one
+sed -i '' "/$plate/d" maincarfile.txt
+
+#add the new information 
+echo " $plate $model $colour $pp " >> maincarfile.txt
+
+#moving to the scripts
+cd ../scripts
+
+#presenting the results
+bash frame1.sh "Car edited successfully"

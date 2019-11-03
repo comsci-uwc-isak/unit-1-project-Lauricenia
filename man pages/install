@@ -1,0 +1,9 @@
+.TH man 6 "28t Oct 2019" "1.0" "Install man page"
+.SH NAME
+install \-install app 
+.SH SYNOPSIS
+bash install
+.SH DESCRIPTION 
+The install function creates the main folder for the app (CArRentalApp) and its components: database and scripts
+.SH AUTHOR
+Lauricenia Buque

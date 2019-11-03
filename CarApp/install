@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#This file creates the folder structure for the
+#minimal car rental app 
+
+echo "Starting installation"
+
+
+#Moving to the desired directory
+cd ~/Desktop
+
+#Creating the App folder 
+mkdir CarRentalApp
+
+#moving to the App folder
+cd CarRentalApp
+
+#Creating folders for the database and the script 
+mkdir database  
+
+cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/
+echo "Installation completed sucessfully"
+

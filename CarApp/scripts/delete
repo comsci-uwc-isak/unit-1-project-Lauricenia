@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#This program deletes a created car
+
+plate=$1
+
+#First we check the number of arguments 
+if [ $# -ne 1 ]; then
+echo " No input. Please restart and enter the name of the car. "
+exit
+fi
+
+#move to the Car Rental App main folder
+cd ../database
+
+#Check if car exists
+if [ ! -f $plate.txt ]; then
+echo " This car does not exist."
+exit
+
+else
+
+#delete car
+rm $plate.txt
+
+ 
+#delete line of the car in the maintext.file
+sed -i '' "/$plate/d" maincarfile.txt
+
+
+#showing the results
+bash ../scripts/frame1.sh "Car deleted successfully" 
+
+fi
+ 

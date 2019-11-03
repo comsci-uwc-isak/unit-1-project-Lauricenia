@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#Check if arguments are complete
+if [ $# -ne 4 ]; then
+echo " The arguments are not complete. Enter Plate, Km, Date-out and Date-in "
+exit 
+fi
+
+plate=$1
+km=$2
+dateout=$3
+datein=$4
+
+cd ../database
+if [ ! -f $plate.txt ]; then
+echo "This car was not created"
+exit
+else 
+echo "$km $dateout $datein" >> $plate.txt
+fi
+
+cd ../scripts
+bash frame1.sh "Trip info recorded successfully" 
+
+

@@ -1,0 +1,13 @@
+.TH man 6 "28t Oct 2019" "1.0" "Record trip man page"
+.SH NAME
+record \-crecord a trip 
+.SH SYNOPSIS
+bash record [license] [km] [date-out] [date-in]
+.SH DESCRIPTION
+The record function stores a car's trip information in the car's file. The user needs to input 4 
+arguments (trip info ) when running the script in the order of license km date-out and date-in.
+.SH EXAMPLES
+bash create LXH798 20 04.04.2019  04.05.2019
+.SH AUTHOR
+Lauricenia Buque
+

@@ -1,0 +1,8 @@
+.SH NAME
+uninstall \-uninstall app 
+.SH SYNOPSIS
+bash uninstall
+.SH DESCRIPTION
+This function deletes the app's main folder as well as all the components within it. The user just has to run the script using bash.
+.SH AUTHOR
+Lauricenia Buque

@@ -1,0 +1,12 @@
+.TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
+.SH NAME
+create \-create a new car 
+.SH SYNOPSIS
+bash create [license] [model] [color] [passengers]
+.SH DESCRIPTION
+The create function creates a car file and records the car's details in the maincarfile.txt file. The user needs to input 4 
+arguments (car details) when running the script in the order of license, model, color and passengers.
+.SH EXAMPLES
+bash create LXH798 Mazda Red 3
+.SH AUTHOR
+Lauricenia Buque

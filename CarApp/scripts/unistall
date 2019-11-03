@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#Go two levels up to get to the directory where our Car Rental File was 
+#installed
+cd ../..
+
+#delete the app directory
+rm -r CarRentalApp
