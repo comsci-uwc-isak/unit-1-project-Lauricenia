@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd ~/Desktop/CarRentalApp/scripts
+bash delete TXM301
+
+#Check that the car file was deleted
+if [ ! -f ../database/TXM301.txt ] ; then
+	echo "The car file was deleted"
+else 
+	echo "Error. File not deleted."
+	echo "Test 5: Delete car -- Failed"
+exit
+fi 
+
+lastline=$( tail -n 1 ../database/maincarfile.txt )
+if [ "TXM301 toyota blue 10" != "$lastline" ]; then
+	echo "The car's details were deleted from maincarfile.txt"
+        echo "Test 5: Delete car -- Passed"
+else
+	echo " The car's details were not deleted from maincarfile.txt"     
+	echo "Test 5: Delete car -- Failed"
+fi
+

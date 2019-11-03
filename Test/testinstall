@@ -1,0 +1,47 @@
+#!/bin/bash
+
+cd ~/Desktop/CarApp
+bash install
+
+echo " TESTING.... "
+#check if the Car Rental file and its componets exists
+if [ -d ~/Desktop/CarRentalApp/database ]; then
+  echo "Car Rental App and database was created..."
+else 
+   echo "Car Rental App or databse not created"
+   echo " Test 1: one step installation -- Failed "
+   exit
+fi
+ 
+  if [ -d ~/Desktop/CarRentalApp/scripts ]; then
+  echo "...scripts file was created."
+else 
+  echo "...scripts file not created"
+  echo " Test 1: one step installation -- Failed "
+  exit
+  fi
+
+    if [ -f ~/Desktop/CarRentalApp/scripts/create ]; then 
+     if [ -f ~/Desktop/CarRentalApp/scripts/record ]; then
+      if [ -f ~/Desktop/CarRentalApp/scripts/edit ]; then
+       if [ -f ~/Desktop/CarRentalApp/scripts/summary ]; then
+         if [ -f ~/Desktop/CarRentalApp/scripts/backup ]; then
+          if [ -f ~/Desktop/CarRentalApp/scripts/delete ]; then
+           if [ -f ~/Desktop/CarRentalApp/scripts/frame1.sh ]; then
+            if [ -f ~/Desktop/CarRentalApp/scripts/uninstall ]; then
+                echo " All scripts were copied "
+		echo "Test 1: One step installation -- Passed"
+            fi
+           fi
+          fi
+         fi
+       fi
+      fi
+     fi
+    else
+    echo "...scripts are not complete"
+    echo " Test 1: one step installation -- Failed "
+    exit 
+    fi
+
+

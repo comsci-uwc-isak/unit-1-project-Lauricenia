@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#step 1: create a car using the script create
+cd ~/Desktop/CarRentalApp/scripts
+bash create TXM301 nissan red 9
+
+Echo "TESTING..."
+#step 2: check that the license file .txt was created 
+if [ -f "../database/TXM301.txt" ] ; then
+echo "A car file was created inside the database"
+else 
+echo "Car file was not found."
+echo "Test 2: create car -- Failed"
+exit
+fi
+
+#step 3: check that the car was added to the main file
+lastline=$( tail -n 1 ../database/maincarfile.txt )
+if [ "TXM301 nissan red 9" == "$lastline" ]; then 
+	echo "The car details were recorded into maincarfile.txt"
+        echo "Test 2: create car -- Passed"
+else
+	echo "Car details were not recorded into maincarfile.txt"
+	echo "Test 2: create car -- Failed"
+fi
+

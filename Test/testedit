@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cd ~/Desktop/CarRentalApp/scripts
+bash edit TXM301 toyota blue 10
+
+echo "TESTING ..."
+
+lastline=$( tail -n 1 ../database/maincarfile.txt )
+
+#Check that the old version was deleted
+if [ " TXM301 toyota blue 10 " == "$lastline" ]; then
+        echo "The old version was deleted "
+else
+        echo "The old version was not deleted"
+        echo "Test 4: Edit car -- Failed"
+        exit
+fi
+
+
+if [ "TXM301 nissan red 9" != "$lastline" ]; then
+	echo "The new version was recorded"
+        echo "Test 4: Edit car -- Passed"
+else
+	echo "The new version was not recorded"
+        echo "Test 4: Edit car -- Failed"
+fi
+
+

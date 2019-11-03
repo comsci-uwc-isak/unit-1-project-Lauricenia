@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd ~/Desktop/CarRentalApp/scripts
+bash uninstall
+
+echo "TESTING..."
+#step 4: Check if the car was deleted
+if [ ! -d ~/Desktop/database/CarRentalApp ] ; then
+echo " CarRentalApp folder was deleted"
+echo "Test 6: Uninstall app -- Passed"
+else 
+echo "CarRentalApp folder was not deleted"
+echo "Test 6: Uninstall app -- Failed"
+fi

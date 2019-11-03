@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd ~/Desktop/CarRentalApp/scripts
+bash record TXM301 20 4 4 
+
+#step 2: check that the trip info was recorded
+lastline=$( tail -n 1 ../database/TXM301.txt ) 
+if [ "20 4 4" == "$lastline" ] ; then
+	echo "The car's trip info was recorded into the car's file"
+	echo "Test 3: Record trip -- Passed"
+else 
+	echo "The ca's trip info was not recorded into the car's file"
+	echo "Test 3: Record trip -- Failed"
+fi
+
