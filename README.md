@@ -201,9 +201,10 @@ Echo "TESTING ..."
 lastline=$( tail -n 1 ../database/maincarfile.txt )
 
 #Check that the old version was deleted
-if [ "TXM301 toyota blue 10" == "$lastline" ]; then
+if [ " TXM301 toyota blue 10 " == "$lastline" ]; then
         echo "The old version was deleted "
 else
+        echo "The olde version was deleted"
         echo "Test 4: Edit car -- Failed"
         exit
 fi
