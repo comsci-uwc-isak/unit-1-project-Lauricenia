@@ -80,7 +80,7 @@ Test plan
   
 Test 1 : Installation
 ---------------
-``.sh
+```.sh
 #!/bin/bash
 
 cd ~/Desktop/CarApp
@@ -126,7 +126,7 @@ else
     echo " Test 1: one step installation -- Failed "
     exit 
     fi
-``
+```
 [Fig5][The above script shows the algorithms for Test 1]
  
 Test 2 : Create car
@@ -184,7 +184,7 @@ fi
 
 Test 4: Edit car
 ------------
-``.sh
+```.sh
 #!/bin/bash
 
 cd ~/Desktop/CarRentalApp/scripts
@@ -211,12 +211,12 @@ else
         echo "Test 4: Edit car -- Failed"
 fi
 
-``
+```
 [Fig8][The above script shows the algorithms for Test 4]
 
 Test 5: Delete car
 -------------
-``.sh
+```.sh
 #!/bin/bash
 
 cd ~/Desktop/CarRentalApp/scripts
@@ -240,7 +240,7 @@ else
 	echo "Test 5: Delete car -- Failed"
 fi
 
-``
+```
 [Fig9][The above script shows the algorithms for Test 5]
 <p></details> 
 
@@ -551,7 +551,8 @@ Backup
 ===============
 The backup function creates a backup file and copies the database folder from the App main folder.
   
-```.#!/bin/bash
+```.sh
+#!/bin/bash
 
 #this program backs up the Rental Car app data into a directory chosen by the
 #user
@@ -598,7 +599,7 @@ Man pages
 
 Install
 ----------
-``.sh
+```.sh
 .TH man 6 "28t Oct 2019" "1.0" "Install man page"
 .SH NAME
 install \-install app 
@@ -608,10 +609,10 @@ bash install
 The install function creates the main folder for the app (CArRentalApp) and its components: database and scripts
 .SH AUTHOR
 Lingye
-``
+```
 create
 ----------
-``.sh
+```.sh
 .TH man 6 "28t Oct 2019" "1.0" "car Rental App scripts man page"
 .SH NAME
 create \-create a new car 
@@ -624,10 +625,10 @@ arguments (car details) when running the script in the order of license, model, 
 bash create LXH798 Mazda Red 3
 .SH AUTHOR
 Dr. Ruben Pinzon
-``
+```
 record
 ----------
-``.sh
+```.sh
 .TH man 6 "28t Oct 2019" "1.0" "Record trip man page"
 .SH NAME
 record \-crecord a trip 
@@ -640,10 +641,10 @@ arguments (trip info ) when running the script in the order of license km date-o
 bash create LXH798 20 04.04.2019  04.05.2019
 .SH AUTHOR
 Dr. Ruben Pinzon
-``
+```
 edit
 -------
-``.sh
+```.sh
 .TH man 6 "28t Oct 2019" "1.0" "Edit a car man page"
 .SH NAME
 edit \-edit a car 
@@ -656,10 +657,10 @@ arguments (new version of car details) when running the script in the order of l
 bash edit LXH798 Nissan Blue 4
 .SH AUTHOR
 Dr. Ruben Pinzon
-``
+```
 backup
 -------
-``.sh
+```.sh
 .TH man 6 "28t Oct 2019" "1.0" "Backup man page"
 .SH NAME
 backup \- backup data 
@@ -669,10 +670,10 @@ bash backup
 The backup function creates a backup file and copies the database folder from the App main folder. The user just has to run the script using bash.
 .SH AUTHOR
 Lauricenia Buque 
-``
+```
 summary
 --------
-``.sh
+```.sh
 .TH man 6 "28t Oct 2019" "1.0" "Summary man page"
 .SH NAME
 summary \- summarize distance travelled
@@ -685,10 +686,10 @@ arguments (license) when running the script.
 bash summary LXH798 
 .SH AUTHOR
 Dr. Ruben Pinzon 
-``
+```
 delete
 -------
-``.sh
+```.sh
 .TH man 6 "28t Oct 2019" "1.0" "delete car man page"
 .SH NAME
 delete \-delete a new car 
@@ -701,10 +702,10 @@ arguments (license) when running the script.
 bash delete LXH798
 .SH AUTHOR
 Fuma 
-``
+```
 uninstall
 ----------
-``.sh.TH man 6 "28t Oct 2019" "1.0" "uninstall app man page"
+```.sh.TH man 6 "28t Oct 2019" "1.0" "uninstall app man page"
 .SH NAME
 uninstall \-uninstall app 
 .SH SYNOPSIS
@@ -713,7 +714,7 @@ bash uninstall
 This function deletes the app's main folder as well as all the components within it. The user just has to run the script using bash.
 .SH AUTHOR
 Lauricenia Buque
-``
+```
 <p></details>
 
 
