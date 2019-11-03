@@ -11,7 +11,7 @@ Contents
   1. [Design](#design)
   1. [Development](#development)
   1. [Evalution](#evaluation)
-  1. [Citations](#citations)
+  1. [References](#references)
   
  <details><summary>Planning</summary>
 
