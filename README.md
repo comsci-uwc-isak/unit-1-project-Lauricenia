@@ -315,8 +315,8 @@ The following steps summarize the algorithms to create a new car in the system:
 
 problems and solutions
 ----------------------
-In the first draft of the script, the user had to add the location for the installation of the app but since we dont know if the user knows how to write paths, I had to set as default location. ```.sh cd ~/Desktop ``` I chose desktop because its the most acessible location.
-The first draft also did not have the feature of creating a scripts file containing all the application's funtions. This was solved by creating an installation folder that contained a folder with all the functions' scripts and by adding a section on the installation script to copy this folder to the app's main folder. ```.sh cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/```
+In the first draft of the script, the user had to add the location for the installation of the app but since we dont know if the user knows how to write paths, I had to set as default location. ``` cd ~/Desktop ``` I chose desktop because its the most acessible location.
+The first draft also did not have the feature of creating a scripts file containing all the application's funtions. This was solved by creating an installation folder that contained a folder with all the functions' scripts and by adding a section on the installation script to copy this folder to the app's main folder. ```cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/```
 
 Create function
 ==================
@@ -464,8 +464,8 @@ The following steps summarize the algorithms to edit a car info:
 
 Problems and solutions
 -----------------
-The old data version was not being erased. This problem was solved by adding ```.sh '' ``` in the line: 
-```.sh sed -i '' "/$plate/d" maincarfile.txt ```
+The old data version was not being erased. This problem was solved by adding ```'' ``` in the line: 
+```sed -i '' "/$plate/d" maincarfile.txt ```
 
 Delete 
 ==============
@@ -635,7 +635,7 @@ bash install
 .SH DESCRIPTION 
 The install function creates the main folder for the app (CArRentalApp) and its components: database and scripts
 .SH AUTHOR
-Lingye
+Lauricenia Buque
 ```
 create
 ----------
@@ -651,7 +651,7 @@ arguments (car details) when running the script in the order of license, model, 
 .SH EXAMPLES
 bash create LXH798 Mazda Red 3
 .SH AUTHOR
-Dr. Ruben Pinzon
+Lauricenia Buque
 ```
 record
 ----------
@@ -667,7 +667,7 @@ arguments (trip info ) when running the script in the order of license km date-o
 .SH EXAMPLES
 bash create LXH798 20 04.04.2019  04.05.2019
 .SH AUTHOR
-Dr. Ruben Pinzon
+Lauricenia Buque
 ```
 edit
 -------
@@ -683,7 +683,7 @@ arguments (new version of car details) when running the script in the order of l
 .SH EXAMPLES
 bash edit LXH798 Nissan Blue 4
 .SH AUTHOR
-Dr. Ruben Pinzon
+Lauricenia Buque
 ```
 backup
 -------
@@ -712,7 +712,7 @@ arguments (license) when running the script.
 .SH EXAMPLES
 bash summary LXH798 
 .SH AUTHOR
-Dr. Ruben Pinzon 
+Lauricenia Buque
 ```
 delete
 -------
@@ -728,7 +728,7 @@ arguments (license) when running the script.
 .SH EXAMPLES
 bash delete LXH798
 .SH AUTHOR
-Fuma 
+Lauricenia Buque
 ```
 uninstall
 ----------
@@ -756,7 +756,8 @@ Recommendations for the future
 ======================================
 In the end it was possible to achieve all the sucess criteria, however through out the development of the program, I realised that a few other features should have been added to the program: 
 1. Headers for the car.txt files and for the maincarfile.txt file: For an easy understanding of the data recorded, there should be a header for each row so that we know from looking which row corresponds to what. Eg.: 
-Eg.: In a car.txt file ---
+Eg.: In a car.txt file --->
+
 ![Diagram](headersexample.png)
 
 1. A feature to edit the cars trip info: The edit function available for this app only edits the cars details however its also possible for an error to occur when inputting the car trip info, for this reason its also important to have an edit option for the trip data.
