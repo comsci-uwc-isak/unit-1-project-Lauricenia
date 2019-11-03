@@ -80,6 +80,8 @@ Test plan
   
 Test 1 : Installation
 ---------------
+
+The Test 1 script evaluates the installation function. It checks automatically if the application main folder was created successfully and completely.
 ```.sh
 #!/bin/bash
 
@@ -128,9 +130,11 @@ else
     fi
 ```
 [Fig5][The above script shows the algorithms for Test 1]
+
  
 Test 2 : Create car
 ---------------
+The Test 2 script evaluates the create function. It checks automatically if a car file for the testing car was created and if the car details were stored in the maincarfile.txt
 ```.sh
 #!/bin/bash
 
@@ -163,6 +167,7 @@ fi
 
 Test 3: Record trip
 --------------
+The Test 3 script evaluates the record function. It checks automatically if the testing car's trip records were stored into the car's file.
 ```.sh
 #!/bin/bash
 
@@ -184,6 +189,7 @@ fi
 
 Test 4: Edit car
 ------------
+The Test 4 script evaluates the edit function. It checks automatically if the old data version stored in the maincarfile.txt was deleted and if the new one was recorded.
 ```.sh
 #!/bin/bash
 
@@ -216,6 +222,7 @@ fi
 
 Test 5: Delete car
 -------------
+The Test 5 script evaluates the delete function. It checks automatically if the testing car's file was deleted as well as its record in the maincarfile.txt.
 ```.sh
 #!/bin/bash
 
@@ -245,10 +252,29 @@ fi
 <p></details> 
 
 
+Test 6: Uninstall app
+-----------
+The Test 6 script evaluates the uninstall function. It checks automatically if the app main folder (CarRentalApp) was deleted.
+```.sh
+#!/bin/bash
 
+cd ~/Desktop/CarRentalApp/scripts
+bash uninstall
+
+echo "TESTING..."
+#step 4: Check if the car was deleted
+if [ !-d ~/Desktop/database/CarRentalApp ] ; then
+echo " CarRentalApp folder was deleted"
+echo "Test 6: Uninstall app -- Passed"
+else 
+echo "CarRentalApp folder was not deleted"
+echo "Test 6: Uninstall app -- Failed"
+fi
+
+```
 <details><summary>Development</summary>
   
-Installation
+Installation 
 ====================
 
 The installation function creates the app's main folder and its components: database folder and scripts folder.
@@ -274,24 +300,24 @@ cd CarRentalApp
 mkdir database  
 
 cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/
+
 echo "Installation completed sucessfully"
 ```
 [Fig10][The above script shows the algorithms for installing the app]
 
 The following steps summarize the algorithms to create a new car in the system:
 1. Move to the desktop
-1. Create the CarRentalApp file
-1. move to the CarRentalApp 
-1. create the database folder
-1. copy the scripts folder from the CarApp file (installation file)
+1. Create the CarRentalApp folder and inside it the database folder
+1. Move to the CarRentalApp 
+1. Create the database folder
+1. Copy the scripts folder from the CarApp file (installation file)
 
 problems and solutions
 ----------------------
-In the first draft of the script, the user had to add the location for the installation of the app but since we dont know if the user knows how to write paths, I had to set a location and I chose desktop because its the most acessible location.
-The first draft also did not have the feature of creating a scripts file containing all the application's funtions. This was solved by creating an installation folder that contained the all scripts inside a folder and adding a section the installation script to copy this folder to the app's main folder.
+In the first draft of the script, the user had to add the location for the installation of the app but since we dont know if the user knows how to write paths, I had to set as default location. ```.sh cd ~/Desktop ``` I chose desktop because its the most acessible location.
+The first draft also did not have the feature of creating a scripts file containing all the application's funtions. This was solved by creating an installation folder that contained a folder with all the functions' scripts and by adding a section on the installation script to copy this folder to the app's main folder. ```.sh cp -r ~/Desktop/CarApp/scripts ~/Desktop/CarRentalApp/```
 
-
-Creat
+Create function
 ==================
   
 The create function creates a car file and records the car's details in the maincarfile.txt file.
@@ -334,17 +360,17 @@ fi
 [Fig11][This script shows the algorithms for creating the car]
 
 The following steps summarize the algorithms to create a new car in the system:
-1. Get input from the user 
-1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit. 
-1. Write to main file with one extra line. Not erasing other entries. 
-1. Create car trip file with 4 case for the 4 arguments plate.txt
+1. Check number of arguments (model, color, pp). If 4 then continue, if not "message", exit.
+1. Atribute variables 
+1. move to the database folder and write to ```maincarfile.txt``` with one extra line. Not erasing other entries. 
+1. Create car trip file ```$plate.txt```
+1.Move to scripts folder and run the frame script
 
 problems and solutions: 
 -----------------
-The frame was not showing. This was solved by specfiying the location of the frame script.
+The frame was not showing. This was solved by specfiying the location of the frame script. ```.sh cd ../scripts```
 
-
-Record
+Record function
 ==========================
 The record function stores a car's trip information in the car's file.
  
@@ -377,10 +403,11 @@ bash frame1.sh "Trip info recorded successfully"
 
 The following steps summarize the algorithms to record trip info:  
 1. Check arguments (Plate, km,Date-out,Date-in) if 4, then continue, if not "message", exit.
-1. Check that the car exists.
-1. If car exists then write the trip info in the $plate.txt file, without erasing previous trips.
+1. Move to the database folder and check that the car exists.
+1. If car exists then write the trip info in the ```$plate.txt ``` file, without erasing previous trips.
+1. Move to the scripts folder and run the frame script
 
-Edit
+Edit function
 ==================
 The edit function edits a car's details stored in the maincarfile.txt file.
   
@@ -429,15 +456,15 @@ bash frame1.sh "Car edited successfully"
 
 The following steps summarize the algorithms to edit a car info:
 1. Check the number of arguments. If not equal to 4, then print "message" and exit
-1. atribute variables to the arguments
-1. move to the database file to locate the car file
-1. check if car file exists. If not, then print "message" and exit. Else, copy the arguments to the car file.
-1. move to the script file to locate the frame script
-1. show results in frame script
+1. Atribute variables to the arguments
+1. Move to the database folder and check if car file exists. If not, then print "message" and exit. 
+1. If yes, erase the old data version and write the new version into```maincarfile.txt``` without erasing other cars
+1. Move to the script folder and run the frame script
 
 Problems and solutions
 -----------------
-The old version being replaced was not being erased. This problem was solved by adding ``.sh '' `` in the line: ``.sh sed -i '' "/$plate/d" maincarfile.txt ``
+The old data version was not being erased. This problem was solved by adding ```.sh '' ``` in the line: 
+```.sh sed -i '' "/$plate/d" maincarfile.txt ```
 
 Delete 
 ==============
@@ -485,14 +512,13 @@ fi
 
 The following steps summarize the algorithms to delete a car:
 1. Check the existance and number of arguments. If not equal to one, then print "message" and exit. If yes, continue.
-1. atribute a variable to the first argument
-1. move to the database directory to locate the car file
-1. check if car exists. If not, then print "message" and exit. Else, delete the car file and delete the car info in the main car file 
-1. Show results in frame
+1.Atribute a variable to the argument
+1.Move to the database folder and check if car exists. If not, then print "message" and exit. Else, delete the car file ```$ plate.txt``` and delete the car info in the ```maincarfile.txt``` 
+1. Move to the script folder and run the frame script
 
 Summary 
 =============
-The summary fucntion displays the total distance travelled by a car.
+The summary function displays the total distance travelled by a car.
 
 ```.sh 
 #!/bin/bash
@@ -509,13 +535,13 @@ fi
 
 
 #Check if file exists in database
-car=$1
+plate=$1
 
 #move to the desirable directory 
 cd ../database
 
 #Another option is moving to the database before checking the file
-if [ ! -f $car.txt ]; then
+if [ ! -f $plate.txt ]; then
  echo " Car not created. $car does not exist in the database "
  exit
 fi
@@ -533,7 +559,7 @@ do
 break
 done
 
-done < car.txt
+done < $plate.txt
 
 #Step 4: Show result nicely 
 cd ../scripts/
@@ -543,10 +569,10 @@ bash frame1.sh "Total distance travelled for $car was $total"
 
 The following steps summarize the algorithms to generate the summary of a car:
 1. Check the number of arguments. If 1 continue, if not "message", exit.
-1. Check if the car exists. If yes continue, if not "message", exit.
-1. Read the record trips in the car license and for the first word in line (km)
-do summary for all if $1 arg =all
-
+1. Move to the database folder and check if the car exists. If yes continue, if not "message", exit.
+1. Read the record trips in the car file ```$plate.txt``` and for the first word in line (km)
+do sum for all lines.
+1. Move to the script folder and run the frame script to show the results
 Backup
 ===============
 The backup function creates a backup file and copies the database folder from the App main folder.
@@ -567,14 +593,12 @@ bash frame1.sh "Backup was successfully"
 [Fig][The above script shows the algorithms for the backup function]
 
 The following steps summarize the algorithms to backup the data in the Car Rental App:
-1. Check the existance and number of arguments. If not equal to 1 then print "message", exit, else :
-   1. cope the Car Rental App into a destination input by the user
-   2. change the name to one that specifies the day of the backup
-   3. show the results  
+   1. Copy the database into a backup folder in the desktop
+   1. Move to the script folder and run the frame script to show the results
    
 Problems and solutions
 --------------------
-The first backup script as the installation script also had the option of the letting the user input the location. This was changed by setting the desktop as the default location for the same reason as of the installation script.
+As the installation script the first backup script also had the option of allowing the user input the location. This was changed by setting the desktop as the default location for the same reason as of the installation script.
 
 Uninstall
 ==============
@@ -590,12 +614,13 @@ cd ~/Desktop
 rm -r RentalCarApp
 ``
 [Fig][The above script shows the algorithms for the uninstall function]
-The following steps summarize the algorithms to backup the data in the Car Rental App:
-1. Go to the Desktop
-1. delete the CarRentalApp
+The following step summarize the algorithms to backup the data in the Car Rental App:
+1. Move to the Desktop and delete the ```CarRentalApp``` folder
+
 
 Man pages
 ================
+The man pages constitute the user documentation for the car Rental App.
 
 Install
 ----------
@@ -727,7 +752,7 @@ Evidence for sucess of criteria
 
 Recommendations for the future
 ======================================
-In the end the program fullfilled all the sucess criteria, however through out the development of the program, I realised that a few other features should have been added to the program: 
+In the end it was possible to achieve all the sucess criteria, however through out the development of the program, I realised that a few other features should have been added to the program: 
 1. Headers for the car.txt files and for the maincarfile.txt file: For an easy understanding of the data recorded, there should be a header for each row so that we know from looking which row corresponds to what. Eg.: 
 Eg.: In a car.txt file
 
@@ -737,8 +762,7 @@ Eg.: In a car.txt file
 
 1. A summary of a car should have more details. The actual summary function only shows the total distance travalled by the car but there are more revelant details that would be helpfull for the business,like, how many times was the car rented, the period of the year that it was most rented, or the average amount of time that it is usually rented for. 
 
-1. The backup should be automatic and the database versions should have a backup dates name, eg.: BACKUP/database_04.04.2019 ( this backup was done in april 4th of 2019 ). One more thing that would improve the backup function is having the option of backing up in an external drive. In a case of an accident with the computer that would be the only way to recover the data.
-summary : explain what type of testing was used (refer to the slides in).
+1. The backup should be automatic and the database versions should have a backup dates name, eg.: BACKUP/database_04.04.2019 ( this backup was done in april 4th of 2019 ). One more thing that would improve the backup function is having the option of backing up in an external drive. In a case of an accident with the computer this would be the only way to recover the data.
 
 <p></details>
 
@@ -749,4 +773,5 @@ Christensson, Per. "Bash Definition." TechTerms. Sharpened Productions, 15 Augus
 Gite, Vivek, et al. “HowTo: Linux / UNIX Create a Manpage.” NixCraft, Vivek Gite, 16 Nov. 2017, www.cyberciti.biz/faq/linux-unix-creating-a-manpage/.
 
 Pandey, Parul. “Basics of BASH for Beginners.” Medium, Towards Data Science, 26 July 2019, towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a.
+
 <p></details>
