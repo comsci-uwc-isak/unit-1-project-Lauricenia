@@ -1,4 +1,10 @@
 ![CarRental](logo.png)
+```.py
+Marks=27
+Demo=-
+Total=(Marks+Demo)=27
+```
+**Graded on Nov 5**
 
 Car Rental Minimal App
 ===========================
@@ -32,7 +38,16 @@ These are the measurable outcomes :
 1. A car can be deleted
 1. The application can be uninstalled 
  <p></details>
- 
+
+**Criterion A**
+
+|Level|Descriptor|
+|----|-----|
+|6|The client in the car rental office is identified and his situation described. The rationale for choosing the proposed product (Computer tools used) is justified and includes a range of appropriate criteria for evaluating the success of the product.|
+```.sh
+Rational
+* Great job with this criterion! One more justificaiton for using BASH is that we were learning it. 
+```
 
  <details><summary>Design</summary>
   
@@ -66,7 +81,16 @@ Edit function flowchart
 ![Diagram](editcar.png)
 [fig4][This picture shows the flowchart of the edit function]
 
-
+## Criterion B
+|**level**|**Description**|
+|-----|------------|
+|9|An outline test plan, are detailed and complete. A system diagram and at least 3 flow diagrams for algorithms in the product are included. From this information it is clear how the product was developed.|
+```.sh
+Rationale
+*Great job with the system diagrams. You can use the figure as a reference point and refeer to it with Fig. 1. For example: "As shown in Fig. 1, the computational system consists of ..." This is necessary to be concrete about the reason from including the picture.
+* Good job with the flow diagrams. You will need to highlight important points from the diagrams in the description.
+* The test plan looks really good. Good job
+```
 
 Test plan
 ================
@@ -738,6 +762,17 @@ This function deletes the app's main folder as well as all the components within
 .SH AUTHOR
 Lauricenia Buque
 ```
+
+## Criterion C
+|**level**|**Description**|
+|-----|------------|
+|6|The proposed solution is characterized by the appropriate use of existing tools. The techniques are adequate for the task and their use is explained. All sources are identified.|
+```.sh
+Rationale
+* Neat work here Lauricenia. 
+* Try to use the references in the body of the document where you used the information, for example, when researching solutions to the problems you faced," As presented in [1], to read a file in bash we can use..."
+```
+
 <p></details>
 
 
@@ -763,6 +798,16 @@ Eg.: In a car.txt file --->
 1. A summary of a car should have more details. The actual summary function only shows the total distance travalled by the car but there are more revelant details that would be helpfull for the business,like, how many times was the car rented, the period of the year that it was most rented, or the average amount of time that it is usually rented for. 
 
 1. The backup should be automatic and the database versions should have a backup dates name, eg.: BACKUP/database_04.04.2019 ( this backup was done in april 4th of 2019 ). One more thing that would improve the backup function is having the option of backing up in an external drive. In a case of an accident with the computer this would be the only way to recover the data.
+
+## Criterion D
+|**level**|**Description**|
+|-----|------------|
+|6|The product is fully evaluated against the success criteria identified in criterion A. Recommendations for further improvement of the product are realistic.|
+```.sh
+Rationale
+* The Improvements are realistic and necessary. The evidence for the achievement of the criteria is also sufficient.
+* Well done
+```
 
 <p></details>
 
